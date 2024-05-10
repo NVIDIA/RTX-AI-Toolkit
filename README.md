@@ -8,7 +8,7 @@ RTX AI Toolkit provides a seamless developer workflow designed for fine-tuning A
 
 The RTX AI Toolkit workflow is structured into two main phases: the Model Building Phase and the Deployment Phase. Each phase is tailored to guide you through the necessary steps to effectively fine-tune and deploy your AI models.
 
-Currently, we support an end-to-end workflow for fine-tuning LLMs using PEFT (Parameter Efficient Fine-Tuning) techniques on your RTX PC and deploying using NVIDIA AI Inference Manager (NvAIM) SDK, ONNX-Runtime, or as NIM endpoints in the cloud.
+Currently, we support an end-to-end workflow for fine-tuning LLMs using PEFT (Parameter Efficient Fine-Tuning) techniques such as LoRA and(Low-Rank Adaptation of Large Language Models) and QLoRA on your RTX PC and deploying using NVIDIA AI Inference Manager (NvAIM) SDK, ONNX-Runtime, or as NIM endpoints in the cloud.
 
 
 
@@ -19,3 +19,9 @@ Currently, we support an end-to-end workflow for fine-tuning LLMs using PEFT (Pa
 RTX AI Toolkit leverages NVIDIA AI Workbench  to streamline dependency management. AI Workbench offers a WSL-based container environment that is lightweight and easy to use, significantly enhancing the setup process for AI model development and deployment.
 
 To learn more about NVIDIA AI Workbench Desktop and to download it, please visit (https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)[here].
+
+### Model Deployment
+
+
+## Example Workflow
+
