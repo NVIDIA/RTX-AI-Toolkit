@@ -16,4 +16,6 @@ Currently, we support an end-to-end workflow for fine-tuning LLMs using PEFT (Pa
 
 
 ### Model Building
-RTX AI Toolkit leverages NVIDIA Workbench for 
+RTX AI Toolkit leverages NVIDIA AI Workbench  to streamline dependency management. AI Workbench offers a WSL-based container environment that is lightweight and easy to use, significantly enhancing the setup process for AI model development and deployment.
+
+To learn more about NVIDIA AI Workbench Desktop and to download it, please visit here[https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/].
