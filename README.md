@@ -20,9 +20,12 @@ Currently, we support an end-to-end workflow for fine-tuning LLMs using PEFT (Pa
 #### NVIDIA AI Workbench 
 RTX AI Toolkit leverages NVIDIA AI Workbench to streamline dependency management. AI Workbench offers a WSL-based container environment that is lightweight and easy to use, significantly enhancing the setup process for AI model development and deployment.
 
-To learn more about NVIDIA AI Workbench Desktop and to download it, please visit (https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)[here].
+To learn more about NVIDIA AI Workbench Desktop and to download it, please visit [here](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/).
 
-#### Llamafactory Project
+#### LLaMA-Factory Project
+For fine-tuning Large Language Models (LLMs), we have integrated the popular [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) as an AI Workbench project. LLaMa-Factory provides a user-friendly graphical interface (GUI) that simplifies the model tuning process, making it accessible even to those new to AI development. Our Workbnench project enables rapid deployment of LLaMA-Factory on Windows PCs with an RTX GPU simplifying dependency management.
+
+Get started with LlamaFactory on your RTX PC today by visiting here.
 
 ### 2. Model Deployment Phase
 Models fine-tuned using RTX AI Toolkit can be deployed using multiple options: 
