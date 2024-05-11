@@ -1,93 +1,105 @@
-# RTX AI Toolkit
-
-
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab-master.nvidia.com/techmarketing/rtx-ai-toolkit.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab-master.nvidia.com/techmarketing/rtx-ai-toolkit/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
+# NVIDIA RTX AI Toolkit
 
 ## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+The NVIDIA RTX™ AI Toolkit is a suite of tools for Windows application developers to accelerate model customization, optimization, and deployment of AI models into applications running on Windows PC for RTX — across both cloud and PC. The Toolkit supports two primary workflows for model development and application deployment.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Latest News
+[NVIDIA RTX AI Toolkit Launch Blog](NeedLink)
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## Getting Started
+NVIDIA RTX AI Toolkit includes 2 primary phases: Model Development and Application Deployment. Each phase is tailored to guide you through the necessary steps to effectively customize and deploy your AI models. 
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Currently, we support an end-to-end workflow for customizing LLMs using PEFT (Parameter Efficient Fine-Tuning) techniques such as LoRA and(Low-Rank Adaptation of Large Language Models) and QLoRA on your RTX PC and deploying using NVIDIA AI Inference Manager (AIM) SDK, ONNX-Runtime, or as NIM endpoints in the cloud.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### 1. Model Development Phase: 
+This portion of the workflow involves customizing and optimizing AI models for your particular use-case. This workflow can be accessed via NVIDIA AI Workbench, a tool for organizing and running model training, tuning, and optimization projects both on local RTX GPUs and in the cloud. NVIDIA AI Workbench streamlines dependency management, and offers a WSL-based container environemtn that is lightweight and easy-to-use for AI model development and deployment on Windows. To learn more about NVIDIA AI Workbench and to download it please visit [here](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/).
+
+1. #### Foundation Models
+    We currently offer performance optimized support for the following foundation models natively on Windows RTX PCs:
+    | Model  | Link |
+    | :---   |:---   |
+    | Gemma-2B-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/gemma-2b-int4-rtx) |
+    | Gemma-2B-FP16-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/gemma-2b-fp16-rtx) |
+    | Gemma-7B-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/resources/gemma-7b-int4-rtx) |
+    | CodeGemma-7B-IT-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/codegemma7bitint4) |
+    | Llama2-13b Chat Int4 | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/models/llama2-13b) |
+    | LlaMa2-7B Chat Int4 | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/models/llama2-7b) |
+    | Code Llama 13B | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/models/code_llama) |
+    | Mistral-7B Chat Int4| [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/models/mistral-7b-int4-chat) |
+
+    You may also choose to bring your own custom model into the workflow. Currently, any HuggingFace checkpoint that can fit within the VRAM of an RTX GPU is supported.
+            
+2. #### Model Customization 
+    ##### QLoRA Techniques on Windows RTX PCs:
+    For fine-tuning Large Language Models (LLMs) on RTX PCs, we have integrated the popular [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) as an AI Workbench project. LLaMa-Factory provides a user-friendly graphical interface (GUI) that simplifies the model tuning process, making it accessible even to those new to AI development. Our AI Workbench project enables rapid deployment of LLaMA-Factory on Windows PCs with an RTX GPU simplifying dependency management.
+
+    Get started with the AI Workbench Project for QLoRA customization on Windows RTX PCs [here](Need Link).
+
+    ##### Full-Suite of Model Customization Techniques on Datacenter GPUs:
+    For fine-tuning on large models or large datasets, [NVIDIA NeMo](https://github.com/NVIDIA/NeMo) provides a scalable framework for customizing Large Language Models (LLMs).
+
+    Get started and learn more about NVIDIA NeMo [here](https://www.nvidia.com/en-us/ai-data-science/products/nemo/).
+    For technical documentation, please see the [NeMo Framework User Guide](https://docs.nvidia.com/nemo-framework/user-guide/latest/playbooks/index.html).
+
+
+
+3. #### Model Optimization
+    ##### Model Quantization
+    One of the primary challenges developers face is with limited memory and compute resources for running AI models on PCs. Developers need to ensure that models can fit efficiently within the VRAM of a PC system, while not sacrificing on performance. To help address this challenge, model quantization can help. The NVIDIA TensorRT Model Optimizer (referred to as Model Optimizer, or ModelOpt) is a library comprising state-of-the-art model optimization techniques including quantization. 
+
+    Get started with the AI Workbench Project for model optimization on Windows RTX PCs [here](Need Link).
+
+    For technical documentation, and to learn more about Model Optimizer click [here](https://github.com/NVIDIA/TensorRT-Model-Optimizer).
+
+
+### 2. Application Deployment Phase
+There are two paths to deploy AI models: On device, or in cloud. Models deployed to device can achieve lower latency and don't require calls to the cloud at runtime, but have certain hardware requirements. Models deployed to the cloud can support an application running on any hardware, but have an ongoing operating cost. Different applications will do either, or both. The RTX AI Toolkit provides tools for both paths. Primarily, both workflows can be accessed and orchestrated via [NVIDIA AI Inference Manager (AIM) SDK](NeedLink). 
+
+AIM SDK offers developers a unified interface to orchestrate deployment of AI models across devices using multiple inference backends -  from cloud to local PC execution environments. This is currently available to certain early access customers, [apply now](NeedLink) to get access.
+
+
+#### Windows RTX On-Device Deployments
+The RTX AI Toolkit includes several additional paths to deploy on RTX PCs.
+
+1. ##### Deploy to ChatRTX
+    ChatRTX is a demo app that lets you personalize a GPT large language model (LLM) connected to your own content—docs, notes, images, or other data. Leveraging retrieval-augmented generation (RAG), TensorRT-LLM, and RTX acceleration, you can query a custom chatbot to quickly get contextually relevant answers. It all runs locally on your Windows RTX PC or workstation, and you’ll get fast and secure results. Learn more about deploying to ChatRTX [here](NeedLink).
+
+2. ##### Deploy using TensorRT-LLM
+    NVIDIA TensorRT-LLM offers the latest features and optimizations offering best performance on NVIDIA native bare-metal Windows for single-GPU inference. Currently, GeForce 40-series GPUs are supported. 
+
+    The release wheel for Windows can be installed with pip. Alternatively, you can build TensorRT-LLM for Windows from the source. Building from the source is an advanced option and is not necessary for building or running LLM engines. It is, however, required if you plan to use the C++ runtime directly or run C++ benchmarks.
+
+    Get started with TensorRT-LLM for Windows [here](NeedLink).
+
+3. ##### Deploy using ONNX-Runtime and DirectML
+    ONNX-Runtime with the DirectML execution path offers a Windows-only implementation, with cross-vendor support alongside minimal code changes. This execution path offers an easy path into the Windows ecosystem with stability and production-grade support.
+
+    Get started with deploying via ONNX-Runtime and DirectML [here](NeedLink).
+
+
+#### Cloud Deployments
+NVIDIA NIMs - NIMs are prebuilt containers for cloud microservice deployment that makes it easy for developers to stand up a cloud-based inference server. RTX AI Toolkit provides the tools to package an optimized model with its dependencies, upload to a staging server, and then launch a NIM, which will pull in the optimized model and create an endpoint for applications to call. Get started with your NIM journey [here](https://build.nvidia.com/explore/discover).
+
+
+## Reference Projects
+1. [AI Workbench Projects for Model Development Phase](NeedLink)
+2. [ChatRTX - Reference Technical Demo App](NeedLink)
+3. [OpenAI Compatible Web Server](https://github.com/NVIDIA/trt-llm-as-openai-windows)
+4. [Projects built by the community](https://www.nvidia.com/en-us/ai-data-science/generative-ai/rtx-developer-contest/winners/)
+
+## Support Matrix
+Need a support matrix.
+
+## Performance & Benchmarks
+Need perf & benchmarks here.
 
 ## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
 State if you are open to contributions and what your requirements are for accepting them.
 
 For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
 You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
 
 ## License
 For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
