@@ -12,24 +12,9 @@ NVIDIA RTX AI Toolkit includes 2 primary phases: Model Development and Applicati
 Currently, we support an end-to-end workflow for customizing LLMs using PEFT (Parameter Efficient Fine-Tuning) techniques such as LoRA and(Low-Rank Adaptation of Large Language Models) and QLoRA on your RTX PC and deploying using NVIDIA AI Inference Manager (AIM) SDK, ONNX-Runtime, or as NIM endpoints in the cloud.
 
 ### 1. Model Development Phase: 
-This portion of the workflow involves customizing and optimizing AI models for your particular use-case. This workflow can be accessed via NVIDIA AI Workbench, a tool for organizing and running model training, tuning, and optimization projects both on local RTX GPUs and in the cloud. NVIDIA AI Workbench streamlines dependency management, and offers a WSL-based container environemtn that is lightweight and easy-to-use for AI model development and deployment on Windows. To learn more about NVIDIA AI Workbench and to download it please visit [here](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/).
-
-1. #### Foundation Models
-    We currently offer performance optimized support for the following foundation models natively on Windows RTX PCs:
-    | Model  | Link |
-    | :---   |:---   |
-    | Gemma-2B-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/gemma-2b-int4-rtx) |
-    | Gemma-2B-FP16-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/gemma-2b-fp16-rtx) |
-    | Gemma-7B-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/resources/gemma-7b-int4-rtx) |
-    | CodeGemma-7B-IT-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/codegemma7bitint4) |
-    | Llama2-13b Chat Int4 | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/models/llama2-13b) |
-    | LlaMa2-7B Chat Int4 | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/models/llama2-7b) |
-    | Code Llama 13B | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/models/code_llama) |
-    | Mistral-7B Chat Int4| [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/models/mistral-7b-int4-chat) |
-
-    You may also choose to bring your own custom model into the workflow. Currently, any HuggingFace checkpoint that can fit within the VRAM of an RTX GPU is supported.
+This portion of the workflow involves customizing and optimizing AI models for your particular use-case. This workflow can be accessed via NVIDIA AI Workbench, a tool for organizing and running model training, tuning, and optimization projects both on local RTX GPUs and in the cloud. NVIDIA AI Workbench streamlines dependency management, and offers a WSL-based container environment that is lightweight and easy-to-use for AI model development and deployment on Windows. To learn more about NVIDIA AI Workbench and to download it please visit [here](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/).
             
-2. #### Model Customization 
+1. #### Model Customization 
     ##### QLoRA Techniques on Windows RTX PCs:
     For fine-tuning Large Language Models (LLMs) on RTX PCs, we have integrated the popular [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) as an AI Workbench project. LLaMa-Factory provides a user-friendly graphical interface (GUI) that simplifies the model tuning process, making it accessible even to those new to AI development. Our AI Workbench project enables rapid deployment of LLaMA-Factory on Windows PCs with an RTX GPU simplifying dependency management.
 
@@ -43,7 +28,7 @@ This portion of the workflow involves customizing and optimizing AI models for y
 
 
 
-3. #### Model Optimization
+2. #### Model Optimization
     ##### Model Quantization
     One of the primary challenges developers face is with limited memory and compute resources for running AI models on PCs. Developers need to ensure that models can fit efficiently within the VRAM of a PC system, while not sacrificing on performance. To help address this challenge, model quantization can help. The NVIDIA TensorRT Model Optimizer (referred to as Model Optimizer, or ModelOpt) is a library comprising state-of-the-art model optimization techniques including quantization. 
 
@@ -88,6 +73,21 @@ NVIDIA NIMs - NIMs are prebuilt containers for cloud microservice deployment tha
 4. [Projects built by the community](https://www.nvidia.com/en-us/ai-data-science/generative-ai/rtx-developer-contest/winners/)
 
 ## Support Matrix
+ ### Foundation Models
+ We currently offer performance optimized support for the following foundation models natively on Windows RTX PCs:
+ | Model  | Link | Inference Backend|
+ | :---   |:---   | :---   |
+ | Gemma-2B-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/gemma-2b-int4-rtx) | TensorRT-LLM |
+ | Gemma-2B-FP16-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/gemma-2b-fp16-rtx) | TensorRT-LLM |
+ | Gemma-7B-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/resources/gemma-7b-int4-rtx) | TensorRT-LLM |
+ | CodeGemma-7B-IT-INT4-RTX | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/codegemma7bitint4) | TensorRT-LLM |
+ | Llama2-13b Chat Int4 | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/models/llama2-13b) | TensorRT-LLM |
+ | LlaMa2-7B Chat Int4 | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/models/llama2-7b) | TensorRT-LLM |
+ | Code Llama 13B | [link](https://catalog.ngc.nvidia.com/orgs/nvidia/models/code_llama) | TensorRT-LLM |
+ | Mistral-7B Chat Int4| [link](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/llama/models/mistral-7b-int4-chat) | TensorRT-LLM |
+
+You may also choose to bring your own custom model into the workflow. Currently, any HuggingFace checkpoint that can fit within the VRAM of an RTX GPU is supported.
+
 Need a support matrix.
 
 ## Performance & Benchmarks
