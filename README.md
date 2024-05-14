@@ -43,20 +43,17 @@ There are two paths to deploy AI models: On device, or in cloud. Models deployed
 AIM SDK offers developers a unified interface to orchestrate deployment of AI models across devices using multiple inference backends -  from cloud to local PC execution environments. This is currently available to certain early access customers, [apply now](NeedLink) to get access.
 
 
-#### Windows RTX On-Device Deployments
+#### Windows RTX PC On-Device Deployments
 The RTX AI Toolkit includes several additional paths to deploy on RTX PCs.
 
-1. ##### Deploy to ChatRTX
-    ChatRTX is a demo app that lets you personalize a GPT large language model (LLM) connected to your own content—docs, notes, images, or other data. Leveraging retrieval-augmented generation (RAG), TensorRT-LLM, and RTX acceleration, you can query a custom chatbot to quickly get contextually relevant answers. It all runs locally on your Windows RTX PC or workstation, and you’ll get fast and secure results. Learn more about deploying to ChatRTX [here](NeedLink).
-
-2. ##### Deploy using TensorRT-LLM
+1. ##### Deploy using TensorRT-LLM
     NVIDIA TensorRT-LLM offers the latest features and optimizations offering best performance on NVIDIA native bare-metal Windows for single-GPU inference. Currently, GeForce 40-series GPUs are supported. 
 
     The release wheel for Windows can be installed with pip. Alternatively, you can build TensorRT-LLM for Windows from the source. Building from the source is an advanced option and is not necessary for building or running LLM engines. It is, however, required if you plan to use the C++ runtime directly or run C++ benchmarks.
 
     Get started with TensorRT-LLM for Windows [here](NeedLink).
 
-3. ##### Deploy using ONNX-Runtime and DirectML
+2. ##### Deploy using ONNX-Runtime and DirectML
     ONNX-Runtime with the DirectML execution path offers a Windows-only implementation, with cross-vendor support alongside minimal code changes. This execution path offers an easy path into the Windows ecosystem with stability and production-grade support.
 
     Get started with deploying via ONNX-Runtime and DirectML [here](NeedLink).
