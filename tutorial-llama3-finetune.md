@@ -5,4 +5,5 @@
 
 <screenshot>
 
-## Start project
+## Start project and wait for build
+
