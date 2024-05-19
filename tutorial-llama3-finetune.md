@@ -15,10 +15,11 @@ Workbench downloads a distro and starts a container and mounts the /project/ dir
 Make sure all paths start with /project as they will be accessible via your Windows env
 
 
-## Training 
+## Training with pre-configured datasets
 
-
+LLaMA3-8B-Chat 
 Make sure QLoRA is enabled
+
 
 Model export options:
 
@@ -30,3 +31,8 @@ Merged checkpoint export
 Depends
 
 ## Deployment
+
+
+
+
+## Appendix: Importing custom data
