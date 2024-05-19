@@ -3,7 +3,8 @@
 
 ## Clone LlamaFactory Workbench Project 
 
-<screenshot>
+![Clone the workbench-llamafactory project](/media/2.png)
+
 
 ## Start project and wait for build
 
