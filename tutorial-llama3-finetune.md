@@ -14,22 +14,20 @@ Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll
 
 <img src="media/2.png" width="600">
 
-Wait for project to clone.
-
-2. After the project is downloaded, Workbench will start building the project on your PC. This step may take 10-15 minutes depending on your network speed. 
+2. After the repo is downloaded, Workbench will start building the project on your PC. This step may take 10-15 minutes depending on your network speed. 
 
 <img src="media/build.png" width="600">
 
-3. After the build is complete, 
+3. After the build is complete, your Workbench project is ready for use.
 
 >[!TIP]
->Workbench downloads a distro and starts a container and mounts the /project/ dir
+> NVIDIA AI Workbench sets up a WSL2 distro (titled NVIDIA-Workbench) on your Windows PC and builds a Docker/podman container for each project. By default, the local project workspace is mounted at /project/ inside the container and its contents are visible in the Workbench GUI's File Browser. The directories visible in the Workbench project such as 'data', are paths inside the containers as '/project/data'. 
 Make sure all paths start with /project as they will be accessible via your Windows env
 
 
+### Using LLaMa-Factory for fine-tuning Llama3-8B with pre-configured datasets
 
-
-## Training Llama3-8B with pre-configured datasets
+1. Start the LLaMa-Factory app from Workbench GUI. This should open up the LLaMa-Factory GUI in your web browser.
 
 In the Model Name dropdown, select 'LLaMA3-8B-Chat' as our model to fine-tune.
 Ensure that the finetuning method is set to 'lora'. Leave the adapter path empty for now.
