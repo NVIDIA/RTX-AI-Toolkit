@@ -31,24 +31,64 @@ Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll
 
 <img src="media/open-llamafactory.png" width="400">
 
-Upon starting the project for the first time, Workbench will prompt for your HuggingFace Token
+Upon starting the project for the first time, Workbench will prompt for your HuggingFace Token.
+
 <img src="media/hftoken.png" width="300">
 
 The LLaMa-Factory GUI should now start in your web browser.
 
-<img src="media/lm-gui.png" width="300">
+<img src="media/lm-gui.png" width="600">
 
 2. **Model Training Configuration**
 
-In the Model Name dropdown, select 'LLaMA3-8B-Chat' as the model to fine-tune.
-Ensure that the fine-tuning method is set to 'lora'. Leave the adapter path empty for now.
+In the Model Name dropdown, select 'LLaMA3-8B-Chat' as the model you wish to fine-tune. Ensure that the fine-tuning method is set to 'lora' and leave the adapter path empty for the time being.
 
-Expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4' as we are performing QLoRA finetuning. 
+Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial as we are performing QLoRA fine-tuning.
 
-Note: Unsloth is not supported in this release 
-
+LlamaFactory offers a variety of built-in datasets suitable for fine-tuning. For this tutorial, we will be using the [codealpaca dataset](https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k) provided by sahil2801.   
 
 Next, in the 'train' tab, let's select the dataset and training parameters. 
+
+| Parameter      | Value |
+| ----------- | ----------- |
+| Lang      | en       |
+| Model name   | LLaMA3-8B-Chat        |
+| Finetuning method | lora |
+| Advanced Config > Quantization bit | 4 |
+| Advanced Config > Prompt template | llama3 |
+| Train >  Stage | Supervised Fine-Tuning |
+| Train > Data dir | data |
+| Train > Dataset | codealpaca |
+
+
+
+Hyperparameters:
+
+| Hyperparameter | Value |
+| -------------- | ----- |
+| Learning rate | 2.5e-5 |
+| Max samples | 5000 |
+| Max samples | 3.0 |
+| Batch size | 2 |
+
+Feel free to adjust the hyperparameters mentioned above based on your setup. Keep all other configurations at their default values. The codealpaca dataset contains approximately 20,000 samples; however, for this tutorial, we are limiting it to 5,000 samples to accelerate the training process. 
+
+
+
+<img src="media/config.png" width="600">
+
+Next, scroll down to the relevant section to preview the command LlamaFactory will use to initiate training. Make sure that the training data is stored in the specified locations as indicated in the tutorial. This ensures that the data is correctly accessed by the training process.
+
+| Parameter | Value |
+| -------------- | ----- |
+| Output dir | /project/data/scratch/codealpaca |
+| Config path | /project/data/scratch/config |
+
+
+<img src="media/directory.png" width="900">
+
+
+Training is expected to take about 2 hours on an RTX 4090 with these parameters.
 
 Model export options:
 
