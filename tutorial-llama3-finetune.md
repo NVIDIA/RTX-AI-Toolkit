@@ -1,15 +1,15 @@
 
-## RTX AI Toolkit LLM Fine-tuning Tutorial  
+# RTX AI Toolkit LLM Fine-tuning Tutorial  
 
 Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll learn how to use the LLaMA-Factory Workbench project to fine-tune the LLaMa3-8B model on a RTX Windows PC. First, we showcase the QLoRA technique for model customization and explain how to export the LoRA adapter or the fine-tuned LLaMa3 checkpoint.
 
-### Prerequisites 
+## Prerequisites 
 1. Ensure you have a Windows PC equipped with an RTX GPU, ideally with at least 16GB of VRAM (GeForce RTX 4070Ti or higher). 
 2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development.
 3. Generate a HuggingFace [User Access Token](https://huggingface.co/docs/hub/en/security-tokens).
 
 
-### Setup LLaMa-Factory Workbench Project
+## Setup LLaMa-Factory Workbench Project
 
 1. Start AI Workbench on your Windows PC and select 'Clone Project'. Proceed to clone the LLaMa-Factory Workbench project using this GitHub URL: [https://github.com/kedarpotdar-nv/workbench-llamafactory](https://github.com/kedarpotdar-nv/workbench-llamafactory)
 
@@ -25,7 +25,7 @@ Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll
 > NVIDIA AI Workbench configures a WSL2 distribution (named NVIDIA-Workbench) on your Windows PC and creates a Docker/Podman container for each project. By default, the local project workspace is mounted at `/project/` within the container, and its contents can be accessed through the Workbench GUI's File Browser. The directories shown in the Workbench project, like 'data', correspond to paths within the containers as `/project/data`. Make sure to store any generated assets, such as model checkpoints, in directories within the `/project/` path to ensure they are preserved between sessions.
 
 
-### Using LLaMa-Factory for fine-tuning Llama3-8B with pre-configured datasets
+## Using LLaMa-Factory for fine-tuning Llama3-8B with pre-configured datasets
 
 1. **Start LLaMa-Factory from AI Workbench.**
 
@@ -73,6 +73,7 @@ Hyperparameters:
 
 Feel free to adjust the hyperparameters mentioned above based on your setup. Keep all other configurations at their default values. The codealpaca dataset contains approximately 20,000 samples; however, for this tutorial, we are limiting it to 5,000 samples to accelerate the training process. 
 
+Training is expected to take about 30 minutes on an RTX 4090 with these parameters. To improve accuracy of the trained model, you can increase the max samples and number of epochs. This will increase the time required for training.
 
 
 <img src="media/config.png" width="600">
@@ -87,8 +88,33 @@ Next, scroll down to the relevant section to preview the command LlamaFactory wi
 
 <img src="media/directory.png" width="900">
 
+Once the model training begins, you will be able to see the loss function plot within the LlamaFactory GUI. Detailed logs will also be displayed alongside the plot, providing real-time insights into the training progress.
+<img src="media/training.png" width="900">
 
-Training is expected to take about 2 hours on an RTX 4090 with these parameters.
+The application stores model checkpoints every 100 steps in the data/scratch/codealpaca directory. Navigate to this directory inside the Windows Explorer:
+
+1. Open the Workbench Project Settings tab.
+2. Next, click on the 'Open' icon next to the project path as shown below:
+<img src="media/path.png" width="900">
+
+3. This action will open a File Explorer window. Navigate to the `data > scratch > codealpaca` directory to view the checkpoints during training. After training is complete, you will find the final LoRA adapters in this directory.
+<img src="media/explorer.png" width="600">
+
+
+
+## Evaluating Model
+
+Once the training process is complete, the final adapters will be available in the data/scratch/codealpaca directory. 
+<img src="media/final.png" width="600">
+
+To evaluate the model, return to the LlamaFactory GUI and open the 'Chat' tab. In the adapter path, specify the directory where your LoRA adapters are stored. In this case, that is `/project/data/scratch/codealpaca`. Then, click on 'Load Model' to start chatting. 
+
+<img src="media/eval.png" width="600">
+
+
+After the model is loaded in VRAM, chat with the model by providing a system prompt and user prompt.
+
+<img src="media/chat.png" width="600">
 
 Model export options:
 
@@ -98,6 +124,8 @@ LoRA adapter export
 Merged checkpoint export
 
 Depends
+
+
 
 ## Deployment
 
