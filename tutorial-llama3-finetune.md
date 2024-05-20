@@ -200,6 +200,8 @@ Proceed to train as usual.
 
 ### 1. Access logs in AI Workbench 
 To access the application's logs in Workbench, click on the 'Output' button at the bottom of the Workbench desktop app to expand the Logs widget. And then select 'Llamafactory' app from the dropdown.
+
+
 <img src="media/logs.png" width="700">
 
 
