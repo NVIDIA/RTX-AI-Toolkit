@@ -71,7 +71,7 @@ Hyperparameters:
 | -------------- | ----- |
 | Learning rate | 2.5e-5 |
 | Max samples | 5000 |
-| Max samples | 3.0 |
+| Epochs | 3.0 |
 | Batch size | 2 |
 
 Feel free to adjust the hyperparameters mentioned above based on your setup. Keep all other configurations at their default values. The codealpaca dataset contains approximately 20,000 samples; however, for this tutorial, we are limiting it to 5,000 samples to accelerate the training process. 
