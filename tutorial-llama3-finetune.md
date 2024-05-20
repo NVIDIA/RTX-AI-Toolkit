@@ -25,7 +25,7 @@ Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll
 > NVIDIA AI Workbench configures a WSL2 distribution (named NVIDIA-Workbench) on your Windows PC and creates a Docker/Podman container for each project. By default, the local project workspace is mounted at `/project/` within the container, and its contents can be accessed through the Workbench GUI's File Browser. The directories shown in the Workbench project, like 'data', correspond to paths within the containers as `/project/data`. Make sure to store any generated assets, such as model checkpoints, in directories within the `/project/` path to ensure they are preserved between sessions.
 
 
-## Using LLaMa-Factory for fine-tuning Llama3-8B with pre-configured datasets
+## Using LLaMa-Factory for fine-tuning Llama3-8B
 
 1. **Start LLaMa-Factory from AI Workbench.**
 
@@ -45,7 +45,10 @@ In the Model Name dropdown, select 'LLaMA3-8B-Chat' as the model you wish to fin
 
 Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial as we are performing QLoRA fine-tuning.
 
-LlamaFactory offers a variety of built-in datasets suitable for fine-tuning. For this tutorial, we will be using the [codealpaca dataset](https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k) provided by sahil2801.   
+LlamaFactory offers a variety of built-in datasets suitable for fine-tuning. For this tutorial, we will be using the [codealpaca dataset](https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k) provided by sahil2801.  
+
+To fine-tune using a custom dataset, go to [Appendix: Importing Custom Datasets](#appendix-importing-custom-datasets).
+
 
 Next, in the 'train' tab, let's select the dataset and training parameters. 
 
@@ -77,6 +80,11 @@ Training is expected to take about 30 minutes on an RTX 4090 with these paramete
 
 
 <img src="media/config.png" width="600">
+
+
+By default, LLaMA-Factory only trains the `q_proj`, and `v_proj` LoRA modules. To improve accuracy, we recommend fine-tuning additional modules. Expand the 'LoRA Configurations' tab, and specify the below as Additonal modules:
+
+`q_proj, k_proj, v_proj, gate_proj, up_proj, down_proj, lm_head`
 
 Next, scroll down to the relevant section to preview the command LlamaFactory will use to initiate training. Make sure that the training data is stored in the specified locations as indicated in the tutorial. This ensures that the data is correctly accessed by the training process.
 
@@ -145,4 +153,39 @@ Once exported, the merged checkpoint will be available in the `data/scratch/merg
 <img src="media/merged2.png" width="900">
 
 
-## Appendix: Importing custom data
+## Appendix Importing custom datasets
+
+LLaMA-Factory supports datasets in the **alpaca** and **sharegpt** format. Read more about custom datasets [here](https://github.com/hiyouga/LLaMA-Factory/tree/main/data).
+
+To incorporate a custom training dataset into your LLama-Factory Workbench project, you can follow these steps using the GPTeacher/Roleplay dataset as an example:
+
+1. Download the Dataset:
+
+- Navigate to the GPTeacher GitHub repository at GPTeacher Roleplay Dataset.
+- Download the file `roleplay-simple-deduped-roleplay-instruct.json`.
+
+2. Move the Dataset File:
+
+- Transfer the downloaded file to your data directory where dataset_info.json is located. This directory is accessible inside the container at `/project/data`.
+- Update dataset_info.json:
+
+3. Edit the dataset_info.json file to include the new dataset by adding the following entry:
+
+<pre>
+{
+  "roleplay_alpaca": {
+    "file_name": "roleplay-simple-deduped-roleplay-instruct.json",
+    "formatting": "alpaca",
+     "columns": {
+      "system": "instruction",
+      "prompt": "input",
+      "response": "response"
+    }
+  }
+}
+</pre>
+
+4. Navigate to LlamaFactory GUI and select the Data Dir as `/project/data`, the `roleplay_alpaca` dataset should be available in the dropdown.
+<img src="media/custom.png" width="900">
+
+Proceed to train as usual.
