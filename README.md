@@ -1,17 +1,23 @@
 # NVIDIA RTX AI Toolkit
 
+
+
 ## Description
 The NVIDIA RTX™ AI Toolkit is a suite of tools for Windows application developers to accelerate model customization, optimization, and deployment of AI models into applications running on Windows PC for RTX — across both cloud and PC. The Toolkit supports two primary workflows for model development and application deployment.
 
+
+
 ## Latest News
+Follow the RTX AI Toolkit fine-tuning workflow with this tutorial - [LLaMaA3-8B QLoRA](tutorial-llama3-finetune.md)
+
 [NVIDIA RTX AI Toolkit Launch Blog](NeedLink)
 
 ## Getting Started
 NVIDIA RTX AI Toolkit includes 2 primary phases: Model Development and Application Deployment. Each phase is tailored to guide you through the necessary steps to effectively customize and deploy your AI models. 
 
-Currently, we support an end-to-end workflow for customizing LLMs using PEFT (Parameter Efficient Fine-Tuning) techniques such as LoRA and(Low-Rank Adaptation of Large Language Models) and QLoRA on your RTX PC and deploying using NVIDIA AI Inference Manager (AIM) SDK, ONNX-Runtime, or as NIM endpoints in the cloud.
+Currently, we support an end-to-end workflow for customizing LLMs using PEFT (Parameter Efficient Fine-Tuning) techniques such as LoRA and(Low-Rank Adaptation of Large Language Models) and QLoRA on your RTX PC and deploying using NVIDIA TensorRT-LLM, ONNX-Runtime, llama.cpp, or as NIM endpoints in the cloud.
 
-### 1. Model Development Phase: 
+### 1. Model Development Phase - [TUTORIAL](tutorial-llama3-finetune.md): 
 This portion of the workflow involves customizing and optimizing AI models for your particular use-case. This workflow can be accessed via NVIDIA AI Workbench, a tool for organizing and running model training, tuning, and optimization projects both on local RTX GPUs and in the cloud. NVIDIA AI Workbench streamlines dependency management, and offers a WSL-based container environment that is lightweight and easy-to-use for AI model development and deployment on Windows. To learn more about NVIDIA AI Workbench and to download it please visit [here](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/).
             
 1. #### Model Customization 
