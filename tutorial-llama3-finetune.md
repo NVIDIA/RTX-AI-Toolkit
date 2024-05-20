@@ -116,20 +116,33 @@ After the model is loaded in VRAM, chat with the model by providing a system pro
 
 <img src="media/chat.png" width="600">
 
-Model export options:
-
-The project enables two forms of model export:
-
-LoRA adapter export
-Merged checkpoint export
-
-Depends
+You have the option to continue training the model by selecting the 'adapter path' in LlamaFactory before initiating Training again. This allows you to further refine the same adapter, enhancing its performance without starting from scratch.
 
 
+## Model Export
 
-## Deployment
+RTX AI Toolkit offers two options for exporting the model customized using the LlamaFactory project:
+
+1. **LoRA Adapter Export:** This option allows you to export only the adapter layers that have been modified or added during the fine-tuning process, enabling easy integration with other projects, further customization, or deployment with libraries that support runtime LoRA adapters such as vLLM.
+   
+2. **Merged Checkpoint Export:** This method exports the entire model, including both the original pre-trained layers and the newly added LoRA adapters, creating a fully integrated and deployable version of the model.
+
+### LoRA Adapter Export
+Exporting LoRA adapters is a straightforward process. Simply copy the adapter files from the output directory located at `data/scratch/codealpaca`. This method allows for easy retrieval and use of the adapters in different projects or environments. Copy the files highlighted below:
+
+<img src="media/lora.png" width="600">
 
 
+### Merged Checkpoint Export
+To export a merged LLaMA3-8B checkpoint, return to the LlamaFactory GUI in your web browser. Make sure the correct model and adapter dir are selected (`/project/data/scratch/codealpaca`). Choose an appropriate maximum shard size, for example, 11GB, to ensure the exported file is manageable. Set the export device to GPU to leverage faster processing, and specify the project directory to a mounted directory such as `/project/data/scratch/merged`. Finally, click on the 'Export' button to initiate the export process. This will generate a complete model file that includes both the original model and the fine-tuned adaptations. 
+
+
+<img src="media/merged.png" width="900">
+
+
+Once exported, the merged checkpoint will be available in the `data/scratch/merged` directory. You can then copy the `merged` directory to your local filesystem for further use. Alternatively, you can export the checkpoint directly to HuggingFace using the built-in uploader provided in LlamaFactory, facilitating easy sharing and deployment through the HuggingFace platform.
+
+<img src="media/merged2.png" width="900">
 
 
 ## Appendix: Importing custom data
