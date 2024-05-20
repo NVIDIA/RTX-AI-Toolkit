@@ -3,13 +3,13 @@
 
 Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll learn how to use the LLaMA-Factory Workbench project to fine-tune the LLaMa3-8B model on a RTX Windows PC. First, we showcase the QLoRA technique for model customization and explain how to export the LoRA adapter or the fine-tuned LLaMa3 checkpoint.
 
-## Prerequisites 
+## 0. Prerequisites 
 1. Ensure you have a Windows PC equipped with an RTX GPU, ideally with at least 16GB of VRAM (GeForce RTX 4070Ti or higher). 
 2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development.
 3. Generate a HuggingFace [User Access Token](https://huggingface.co/docs/hub/en/security-tokens).
 
 
-## Setup LLaMa-Factory Workbench Project
+## 1. Setup LLaMa-Factory Workbench Project
 
 1. Start AI Workbench on your Windows PC and select 'Clone Project'. Proceed to clone the LLaMa-Factory Workbench project using this GitHub URL: [https://github.com/kedarpotdar-nv/workbench-llamafactory](https://github.com/kedarpotdar-nv/workbench-llamafactory)
 
@@ -25,7 +25,7 @@ Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll
 > NVIDIA AI Workbench configures a WSL2 distribution (named NVIDIA-Workbench) on your Windows PC and creates a Docker/Podman container for each project. By default, the local project workspace is mounted at `/project/` within the container, and its contents can be accessed through the Workbench GUI's File Browser. The directories shown in the Workbench project, like 'data', correspond to paths within the containers as `/project/data`. Make sure to store any generated assets, such as model checkpoints, in directories within the `/project/` path to ensure they are preserved between sessions.
 
 
-## Using LLaMa-Factory for fine-tuning Llama3-8B
+## 2. Using LLaMa-Factory for fine-tuning Llama3-8B
 
 1. **Start LLaMa-Factory from AI Workbench.**
 
@@ -110,7 +110,7 @@ The application stores model checkpoints every 100 steps in the data/scratch/cod
 
 
 
-## Evaluating Model
+## 3. Evaluating Model
 
 Once the training process is complete, the final adapters will be available in the data/scratch/codealpaca directory. 
 <img src="media/final.png" width="600">
@@ -127,7 +127,7 @@ After the model is loaded in VRAM, chat with the model by providing a system pro
 You have the option to continue training the model by selecting the 'adapter path' in LlamaFactory before initiating Training again. This allows you to further refine the same adapter, enhancing its performance without starting from scratch.
 
 
-## Model Export
+## 4. Model Export
 
 RTX AI Toolkit offers two options for exporting the model customized using the LlamaFactory project:
 
@@ -151,6 +151,10 @@ To export a merged LLaMA3-8B checkpoint, return to the LlamaFactory GUI in your 
 Once exported, the merged checkpoint will be available in the `data/scratch/merged` directory. You can then copy the `merged` directory to your local filesystem for further use. Alternatively, you can export the checkpoint directly to HuggingFace using the built-in uploader provided in LlamaFactory, facilitating easy sharing and deployment through the HuggingFace platform.
 
 <img src="media/merged2.png" width="900">
+
+
+## 5. Model Deployment
+
 
 
 ## Appendix Importing custom datasets
