@@ -82,7 +82,7 @@ Feel free to adjust the hyperparameters mentioned above based on your setup. Kee
 <img src="media/config.png" width="600">
 
 
-By default, LLaMA-Factory only trains the `q_proj`, and `v_proj` LoRA modules. To improve accuracy, we recommend fine-tuning additional modules. Expand the 'LoRA Configurations' tab, and specify the below as Additonal modules:
+By default, LLaMA-Factory only trains the `q_proj`, and `v_proj` LoRA modules. To improve accuracy, we recommend fine-tuning LoRA modules. Expand the 'LoRA Configurations' tab, and specify the below as 'LoRA modules':
 
 `q_proj, k_proj, v_proj, gate_proj, up_proj, down_proj, lm_head`
 
