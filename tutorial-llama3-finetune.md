@@ -5,10 +5,11 @@ Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll
 
 ## 0. Prerequisites 
 1. Ensure you have a Windows PC equipped with an RTX GPU, ideally with at least 16GB of VRAM (GeForce RTX 4070Ti or higher). 
-2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development. This project is tested with the latest version - 0.50.16.
+2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development. This project is built for the latest (May 2024) release - v0.50.16.
 
 3. Generate a HuggingFace [User Access Token](https://huggingface.co/docs/hub/en/security-tokens). Ensure your HuggingFace account has access to the Meta LLaMA3-8B-Instruct model [here](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct). 
 
+4. 100+ GB free disk space to store the Workbench containers, LLM checkpoints, and 
 
 ## 1. Setup LLaMa-Factory Workbench Project
 
@@ -77,8 +78,6 @@ Hyperparameters:
 
 Feel free to adjust the hyperparameters mentioned above based on your setup. Keep all other configurations at their default values. The codealpaca dataset contains approximately 20,000 samples; however, for this tutorial, we are limiting it to 5,000 samples to accelerate the training process. 
 
-Training is expected to take about 30 minutes on an RTX 4090 with these parameters. To improve accuracy of the trained model, you can increase the max samples and number of epochs. This will increase the time required for training.
-
 
 <img src="media/config.png" width="600">
 
@@ -87,7 +86,9 @@ By default, LLaMA-Factory only trains the `q_proj`, and `v_proj` LoRA modules. T
 
 `q_proj, k_proj, v_proj, gate_proj, up_proj, down_proj, lm_head`
 
-Next, scroll down to the relevant section to preview the command LlamaFactory will use to initiate training. Make sure that the training data is stored in the specified locations as indicated in the tutorial. This ensures that the data is correctly accessed by the training process.
+
+
+>[!IMP] Ensure that the output directory is under `/project/data/scratch/`.
 
 | Parameter | Value |
 | -------------- | ----- |
@@ -96,6 +97,13 @@ Next, scroll down to the relevant section to preview the command LlamaFactory wi
 
 
 <img src="media/directory.png" width="900">
+
+Next, scroll down to the relevant section to preview the command LlamaFactory will use to initiate training. Make sure that the training data is stored in the specified locations as indicated in the tutorial. This ensures that the data is correctly accessed by the training process.
+
+Training is expected to take about 30 minutes on an RTX 4090 with these parameters. To improve accuracy of the trained model, you can increase the max samples and number of epochs. This will increase the time required for training.
+
+
+After you have ensured that the output and project directories are set to the recommended paths, press 'Start' to kick off the fine-tuning process
 
 Once the model training begins, you will be able to see the loss function plot within the LlamaFactory GUI. Detailed logs will also be displayed alongside the plot, providing real-time insights into the training progress.
 <img src="media/training.png" width="900">
@@ -207,7 +215,15 @@ To access the application's logs in Workbench, click on the 'Output' button at t
 <img src="media/logs.png" width="700">
 
 
+### 2. Access Llamafactory Python Environment
 
+
+
+### 3. Workbench Project Build error
+Sometimes when upgrading Workbench version, 
+
+
+### 4. Upgrading Workbench 
 
 
 <TODO>
