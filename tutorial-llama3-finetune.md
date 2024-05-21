@@ -5,7 +5,8 @@ Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll
 
 ## 0. Prerequisites 
 1. Ensure you have a Windows PC equipped with an RTX GPU, ideally with at least 16GB of VRAM (GeForce RTX 4070Ti or higher). 
-2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development.
+2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development. This project is tested with the latest version - 0.50.16.
+
 3. Generate a HuggingFace [User Access Token](https://huggingface.co/docs/hub/en/security-tokens). Ensure your HuggingFace account has access to the Meta LLaMA3-8B-Instruct model [here](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct). 
 
 
