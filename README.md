@@ -26,6 +26,19 @@ There are two paths to deploy AI models: On device, or in cloud. Models deployed
 
 AIM SDK offers developers a unified interface to orchestrate deployment of AI models across devices using multiple inference backends -  from cloud to local PC execution environments. This is currently available to certain early access customers, [apply now](NeedLink) to get access.
 
+**Quantized (on-device) inference:**
+| Platform | LoRA Adapter | Merged checkpoint |
+| -------- | :------------------: | :-----------------------: |
+| TensorRT-LLM | |  ✅ |
+| llama.cpp |    ✅ |   ✅ |
+| ONNX Runtime - GenAI |     |   ✅ |
+
+
+**FP16 (cloud) inference:**
+| Platform | LoRA Adapter | Merged checkpoint |
+| -------- | :------------------: | :-----------------------: |
+| vLLM |    ✅ |   ✅ |
+| NIMs| ✅    |    |
 
 ## Reference Projects
 1. [AI Workbench Projects for Model Development Phase](NeedLink)
