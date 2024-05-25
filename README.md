@@ -18,10 +18,10 @@ NVIDIA RTX AI Toolkit includes 2 primary phases: Model Customization and Model D
 
 Currently, we support an end-to-end workflow for customizing LLMs using PEFT (Parameter Efficient Fine-Tuning) techniques such as LoRA and(Low-Rank Adaptation of Large Language Models) and QLoRA on your RTX PC and deploying using NVIDIA TensorRT-LLM, ONNX-Runtime, llama.cpp, or as NIM endpoints in the cloud.
 
-### 1. Model Customization Phase - [TUTORIAL](tutorial-llama3-finetune.md): 
+### 1. Model Customization  - [TUTORIAL](tutorial-llama3-finetune.md): 
 The model customization tutorial walks you through launching AI Workbench, using the Llama Factory GUI to do QLoRa fine-tuning, and exporting the quantized model. Optionally we provide Jupyter notebooks for quantizing finetuned models for deployment with TensorRT-LLM.
 
-### 2. Model Deployment Phase
+### 2. Model Deployment - [START HERE](llm-deployment/README.md)
 There are two paths to deploy AI models: On device, or in cloud. Models deployed to device can achieve lower latency and don't require calls to the cloud at runtime, but have certain hardware requirements. Models deployed to the cloud can support an application running on any hardware, but have an ongoing operating cost. Different applications will do either, or both. The RTX AI Toolkit provides tools for both paths, and we provide instructions in the tutorial for deploying on device and in the cloud.
 
 AIM SDK offers developers a unified interface to orchestrate deployment of AI models across devices using multiple inference backends -  from cloud to local PC execution environments. This is currently available to certain early access customers, [apply now](NeedLink) to get access.
