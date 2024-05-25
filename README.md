@@ -37,5 +37,5 @@ AIM SDK offers developers a unified interface to orchestrate deployment of AI mo
 Please file Issues on GitHub to 
 
 ## License
-This repository is licensed under the [Apache-2.0 License](LICENSE.md).
+This repository is licensed under the [Apache-2.0 License](LICENSE).
 
