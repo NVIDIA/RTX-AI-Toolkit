@@ -35,14 +35,22 @@ Quantize down to Q4:
 cd build\bin\Debug
 quantize.exe C:\models\codealpaca.gguf C:\models\codealpaca_q4.gguf Q4_K_M
 </pre>
-## 2. Inference
+
+## 2. Inference using Python API
+
+### Setup llama-cpp-python
+<pre>
+set CMAKE_ARGS=-DLLAMA_CUBLAS=on
+set FORCE_CMAKE=1
+pip install llama-cpp-python --force-reinstall --upgrade --no-cache-dir
+</pre>
 
 <pre>
 from llama_cpp import Llama
 
 llm = Llama(
       model_path="C:\models\llama-model.gguf",
-      # n_gpu_layers=-1, # Uncomment to use GPU acceleration
+      n_gpu_layers=-1, #Too use GPU acceleration
       # seed=1337, # Uncomment to set a specific seed
       # n_ctx=2048, # Uncomment to increase the context window
 )
@@ -55,7 +63,6 @@ output = llm(
 print(output)
 </pre>
 
-## 1. LoRA Adapter inference
 
 
 ## 2. Convert checkpoint to GGML
