@@ -2,7 +2,6 @@
 
 
 
-## Description
 The NVIDIA RTX™ AI Toolkit is a suite of tools and SDKs for Windows application developers to accelerate model customization, optimization, and deployment of AI models into applications running on Windows PC for RTX — across both cloud and PC.
 
 <img src="media/workflow.png" width="800">
