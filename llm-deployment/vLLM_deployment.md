@@ -11,7 +11,7 @@ In this guide, we will see how to deploy a vLLM OpenAI-compatible microservice.
 A Linux instance with NVIDIA GPU and nvidia-container-toolkit:
 
 <pre>
-git clone https://github.com/vllm-project/vllm
+docker pull vllm/vllm-openai
 </pre>
 
 ### 1. Pull vLLM-OpenAI Docker 
@@ -30,5 +30,7 @@ docker run --runtime nvidia --gpus all \
     --ipc=host \
     vllm/vllm-openai:latest \
     --model mistralai/Mistral-7B-v0.1
+
+    docker run -it --rm --gpus all -v /mnt/c/Users/kedar/Downloads/llama.cpp/codealpaca-merged:/model -p 8000:8000 --env "TRANSFORMERS_OFFLINE=1" --env "HUGGING_FACE_HUB_TOKEN=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" --env "HF_DATASET_OFFLINE=1" --ipc=host vllm/vllm-openai:latest --model="/model"
 </pre>
 
