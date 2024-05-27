@@ -8,7 +8,7 @@ In this guide, we will see how to deploy a vLLM OpenAI-compatible microservice.
 
 ### 0. Pre-requisites
 
-A Linux instance with NVIDIA GPU and nvidia-container-toolkit:
+A Linux instance with NVIDIA GPU and [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html):
 
 <pre>
 docker pull vllm/vllm-openai

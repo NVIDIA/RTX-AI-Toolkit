@@ -144,6 +144,7 @@ RTX AI Toolkit offers two options for exporting the model customized using the L
    
 2. **Merged Checkpoint Export:** This method exports the entire model, including both the original pre-trained layers and the newly added LoRA adapters, creating a fully integrated and deployable version of the model.
 
+
 ### LoRA Adapter Export
 Exporting LoRA adapters is a straightforward process. Simply copy the adapter files from the output directory located at `data/scratch/codealpaca`. This method allows for easy retrieval and use of the adapters in different projects or environments. Copy the files highlighted below:
 
@@ -151,7 +152,7 @@ Exporting LoRA adapters is a straightforward process. Simply copy the adapter fi
 
 
 ### Merged Checkpoint Export
-To export a merged LLaMA3-8B checkpoint, return to the LlamaFactory GUI in your web browser. Make sure the correct model and adapter dir are selected (`/project/data/scratch/codealpaca`). Choose an appropriate maximum shard size, for example, 11GB, to ensure the exported file is manageable. Set the export device to GPU to leverage faster processing, and specify the project directory to a mounted directory such as `/project/data/scratch/merged`. Finally, click on the 'Export' button to initiate the export process. This will generate a complete model file that includes both the original model and the fine-tuned adaptations. 
+To export a merged LLaMA3-8B checkpoint, return to the LlamaFactory GUI in your web browser. Make sure the correct model and adapter dir are selected (`/project/data/scratch/codealpaca`). Choose an appropriate maximum shard size, for example, 5GB, to ensure the exported file is manageable. Set the export device to GPU to leverage faster processing, and specify the project directory to a mounted directory such as `/project/data/scratch/merged`. Finally, click on the 'Export' button to initiate the export process. This will generate a complete model file that includes both the original model and the fine-tuned adaptations. 
 
 
 <img src="media/merged.png" width="900">
@@ -161,13 +162,30 @@ Once exported, the merged checkpoint will be available in the `data/scratch/merg
 
 <img src="media/merged2.png" width="900">
 
-
 ## 5. Model Deployment
 
-TODO
+RTX AI Toolkit supports the following options for inference deployment of LLMs.
+
+[!NOTE] Click on the ✅ for instructions for that particular pathway.
+
+**Quantized (on-device) inference:**
+| Platform | LoRA Adapter | Merged checkpoint |
+| -------- | :------------------: | :-----------------------: |
+| TensorRT-LLM | |  [✅](llm-deployment/TensorRT-LLM_deployment.md) |
+| llama.cpp |    ✅ |   [✅](llm-deployment/llama.cpp_deployment.md) |
+| ONNX Runtime - DML |     |   [✅](llm-deployment/ORT-DML_QuickStart.md) |
 
 
-## Appendix Importing custom datasets
+**FP16 (cloud) inference:**
+| Platform | LoRA Adapter | Merged checkpoint |
+| -------- | :------------------: | :-----------------------: |
+| vLLM |    ✅ |   ✅ |
+| NIMs| ✅    |    |
+
+
+
+
+## Appendix - Importing custom datasets
 
 LLaMA-Factory supports datasets in the **alpaca** and **sharegpt** format. Read more about custom datasets [here](https://github.com/hiyouga/LLaMA-Factory/tree/main/data).
 

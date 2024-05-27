@@ -12,7 +12,7 @@ RTX AI Toolkit supports the following deployment workflows for the fine-tuned LL
 | -------- | :------------------: | :-----------------------: |
 | TensorRT-LLM | |  ✅ |
 | llama.cpp |    ✅ |   ✅ |
-| ONNX Runtime - GenAI |     |   ✅ |
+| ONNX Runtime - DML |     |   ✅ |
 
 
 **FP16 (cloud) inference:**

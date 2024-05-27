@@ -28,9 +28,9 @@ AIM SDK offers developers a unified interface to orchestrate deployment of AI mo
 **Quantized (on-device) inference:**
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
-| TensorRT-LLM | |  ✅ |
+| TensorRT-LLM | |  [✅](llm-deployment/TensorRT-LLM_deployment.md) |
 | llama.cpp |    ✅ |   ✅ |
-| ONNX Runtime - GenAI |     |   ✅ |
+| ONNX Runtime - DML |     |   ✅ |
 
 
 **FP16 (cloud) inference:**
