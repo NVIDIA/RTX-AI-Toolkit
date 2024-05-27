@@ -2,35 +2,64 @@
 
 ## vLLM Deployment
 
-vLLM provides an HTTP server that implements OpenAI’s Completions and Chat API.
+[vLLM](https://github.com/vllm-project/vllm) is an open-source library for LLM inference and serving, accelerated on NVIDIA GPUs using optimized CUDA kernels. It includes an OpenAI-compatible API server, enabling you to set up a web server for deploying your customized LLM. This allows you to use frameworks and libraries built for the OpenAI API specification, often with little to no code changes.
 
-In this guide, we will see how to deploy a vLLM OpenAI-compatible microservice.
+vLLM supports several models, including Llama, Mistral, Phi-3, and Gemma. See full list [here](https://docs.vllm.ai/en/latest/models/supported_models.html).
+
+In this guide, we will demonstrate how to deploy a vLLM OpenAI-compatible API microservice using the merged checkpoint generated from the Workbench-llamafactory project. To achieve this, we will use the `vllm-openai` Docker container for rapid deployment with customized Hugging Face (HF) checkpoints.
 
 ### 0. Pre-requisites
 
-A Linux instance with NVIDIA GPU and [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html):
+- A Linux node with a [compatible NVIDIA GPU](https://docs.vllm.ai/en/latest/getting_started/installation.html). 
+- Install [Docker](https://github.com/docker/docker-install) and [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html):
+
+
+### 1. Pull vLLM-OpenAI Docker 
 
 <pre>
 docker pull vllm/vllm-openai
 </pre>
 
-### 1. Pull vLLM-OpenAI Docker 
-
-<>
-See all supported models [here](https://docs.vllm.ai/en/latest/models/supported_models.html).
-
-
 ### 2. Deploy microservice
 
-<pre>
-docker run --runtime nvidia --gpus all \
-    -v ~/.cache/huggingface:/root/.cache/huggingface \
-    --env "HUGGING_FACE_HUB_TOKEN=<secret>" \
-    -p 8000:8000 \
-    --ipc=host \
-    vllm/vllm-openai:latest \
-    --model mistralai/Mistral-7B-v0.1
+Copy the merged HF checkpoint from the Workbench-llamafactory tutorial to your Linux host at a location that can be mounted in your Docker container. For example, you can use the directory `/home/nvidia/codealpaca`.
 
-    docker run -it --rm --gpus all -v /mnt/c/Users/kedar/Downloads/llama.cpp/codealpaca-merged:/model -p 8000:8000 --env "TRANSFORMERS_OFFLINE=1" --env "HUGGING_FACE_HUB_TOKEN=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" --env "HF_DATASET_OFFLINE=1" --ipc=host vllm/vllm-openai:latest --model="/model"
+Then, run the following Docker command:
+
+<pre>
+    docker run --rm --gpus all -v <local-merged-ckpt-dir>:/model -p 8000:8000 --env "TRANSFORMERS_OFFLINE=1" --env "HF_DATASET_OFFLINE=1" --name vllm-openai --ipc=host vllm/vllm-openai:latest --model="/model"
 </pre>
 
+
+For example, in our case:
+<pre>
+    docker run --rm --gpus all -v /home/nvidia/codealpaca-merged:/model -p 8000:8000 --env "TRANSFORMERS_OFFLINE=1" --env "HF_DATASET_OFFLINE=1" --name vllm-openai --ipc=host vllm/vllm-openai:latest --model="/model"
+</pre>
+
+This starts the vLLM openAI on the Linux host and starts the inference server on port 8000. 
+
+> You can also start the docker in a detached mode by using the `-d` flag in the `docker run` command to run the container in the background.
+Check the status of the container by running the `docker ps` command and detailed logs can be accessed using `docker logs vllm-openai`.
+
+### 2. Test inference
+
+Note the IP address of your host with the vLLM OpenAI server and connect to the inference server using the openai-python library, either on the same host or remotely. We pass the IP address and port as the base_url for the openAI Python client to use.
+
+<pre>
+from openai import OpenAI
+
+# create an openAI client with a random API key and the vLLM server base URL.
+client = OpenAI(
+    api_key="test",
+    base_url="http://<vllm-host-ip>:8000/v1",
+)
+
+completion = client.completions.create(
+    model="/model",
+    prompt="Q: What does the cat say?.\n A:",
+    echo=False,
+    stream=False)
+
+print(completion)
+
+</pre>
