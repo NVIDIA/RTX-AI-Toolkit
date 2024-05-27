@@ -235,7 +235,7 @@ To access the application's logs in Workbench, click on the 'Output' button at t
 
 ### 2. Access Llamafactory Python Environment
 
-
+LlamaFactory is installed inside a 
 
 ### 3. Workbench Project Build error
 Sometimes when upgrading Workbench version, 
@@ -243,5 +243,6 @@ Sometimes when upgrading Workbench version,
 
 ### 4. Upgrading Workbench 
 
+To upgrade Workbench
 
 <TODO>
