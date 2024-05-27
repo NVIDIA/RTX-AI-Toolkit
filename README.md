@@ -30,23 +30,23 @@ AIM SDK offers developers a unified interface to orchestrate deployment of AI mo
 | -------- | :------------------: | :-----------------------: |
 | TensorRT-LLM | |  [✅](llm-deployment/TensorRT-LLM_deployment.md) |
 | llama.cpp |   |   [✅](llm-deployment/llama.cpp_deployment.md) |
-| ONNX Runtime - DML |     |   ✅ |
+| ONNX Runtime - DML |     |   [✅](llm-deployment/ORT-DML_QuickStart.md) |
 
 
 **FP16 (cloud) inference:**
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
-| vLLM |    ✅ |   ✅ |
-| NIMs| ✅    |    |
+| vLLM |    [✅](llm-deployment/vLLM_deployment.md#3-serving-lora-adapters) |   [✅](llm-deployment/vLLM_deployment.md) |
+| NIMs| [✅](llm-deployment/NIMs_deployment.md)    |    |
 
 ## Reference Projects
-1. [AI Workbench Projects for Model Development Phase](NeedLink)
-2. [ChatRTX - Reference Technical Demo App](NeedLink)
+1. [AI Workbench LLaMa-Factory Project](https://github.com/NVIDIA/workbench-llamafactory)
+2. [ChatRTX - Reference RAG Demo](https://github.com/NVIDIA/ChatRTX)
 3. [OpenAI Compatible Web Server](https://github.com/NVIDIA/trt-llm-as-openai-windows)
 4. [Projects built by the community](https://www.nvidia.com/en-us/ai-data-science/generative-ai/rtx-developer-contest/winners/)
 
 ## Support
-Please file Issues on GitHub to 
+Please file Issues on GitHub.  
 
 ## License
 This repository is licensed under the [Apache-2.0 License](LICENSE).

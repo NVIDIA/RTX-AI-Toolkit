@@ -51,7 +51,7 @@ from openai import OpenAI
 # create an openAI client with a random API key and the vLLM server base URL.
 client = OpenAI(
     api_key="test",
-    base_url="http://<vllm-host-ip>:8000/v1",
+    base_url="http://vllm-host-ip:8000/v1",
 )
 
 completion = client.completions.create(
@@ -63,3 +63,8 @@ completion = client.completions.create(
 print(completion)
 
 </pre>
+
+
+### 3. Serving LoRA adapters
+
+vLLM also lets you use LoRA adapters trained using the RTX AI Toolkit on top of the base model without merging weights. Follow this tutorial for more - ['Using LoRA adapters'](https://docs.vllm.ai/en/latest/models/lora.html).

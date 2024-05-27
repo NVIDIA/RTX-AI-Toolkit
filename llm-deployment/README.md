@@ -18,5 +18,5 @@ RTX AI Toolkit supports the following deployment workflows for the fine-tuned LL
 **FP16 (cloud) inference:**
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
-| vLLM |    ✅ |   ✅ |
+| vLLM |    [✅](vLLM_deployment.md#3-serving-lora-adapters) |   [✅](vLLM_deployment.md) |
 | NIMs| ✅    |    |
