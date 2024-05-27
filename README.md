@@ -29,7 +29,7 @@ AIM SDK offers developers a unified interface to orchestrate deployment of AI mo
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
 | TensorRT-LLM | |  [✅](llm-deployment/TensorRT-LLM_deployment.md) |
-| llama.cpp |    ✅ |   ✅ |
+| llama.cpp |   |   [✅](llm-deployment/llama.cpp_deployment.md) |
 | ONNX Runtime - DML |     |   ✅ |
 
 

@@ -10,9 +10,9 @@ RTX AI Toolkit supports the following deployment workflows for the fine-tuned LL
 **Quantized (on-device) inference:**
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
-| TensorRT-LLM | |  ✅ |
-| llama.cpp |    ✅ |   ✅ |
-| ONNX Runtime - DML |     |   ✅ |
+| TensorRT-LLM | |  [✅](TensorRT-LLM_deployment.md) |
+| llama.cpp |   |   [✅](llama.cpp_deployment.md) |
+| ONNX Runtime - DML |     |   [✅](ORT-DML_QuickStart.md) |
 
 
 **FP16 (cloud) inference:**

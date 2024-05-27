@@ -172,7 +172,7 @@ RTX AI Toolkit supports the following options for inference deployment of LLMs.
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
 | TensorRT-LLM | |  [✅](llm-deployment/TensorRT-LLM_deployment.md) |
-| llama.cpp |    ✅ |   [✅](llm-deployment/llama.cpp_deployment.md) |
+| llama.cpp |    |   [✅](llm-deployment/llama.cpp_deployment.md) |
 | ONNX Runtime - DML |     |   [✅](llm-deployment/ORT-DML_QuickStart.md) |
 
 
