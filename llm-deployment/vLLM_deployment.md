@@ -22,7 +22,7 @@ docker pull vllm/vllm-openai
 
 ### 2. Deploy microservice
 
-Copy the merged HF checkpoint from the Workbench-llamafactory tutorial to your Linux host at a location that can be mounted in your Docker container. For example, you can use the directory `/home/nvidia/codealpaca`.
+Copy the merged HF checkpoint from the AI Workbench-LlamaFactory tutorial to your Linux host at a location that can be mounted in your Docker container. For example, you can use the directory `/home/nvidia/codealpaca`.
 
 Then, run the following Docker command:
 
@@ -35,14 +35,14 @@ For example, in our case:
     docker run --rm --gpus all -v /home/nvidia/codealpaca-merged:/model -p 8000:8000 --env "TRANSFORMERS_OFFLINE=1" --env "HF_DATASET_OFFLINE=1" --name vllm-openai --ipc=host vllm/vllm-openai:latest --model="/model"
 </pre>
 
-This starts the vLLM openAI on the Linux host and starts the inference server on port 8000. 
+This starts the vLLM OpenAI web server on the Linux host and starts the inference server on port 8000. 
 
 > You can also start the docker in a detached mode by using the `-d` flag in the `docker run` command to run the container in the background.
 Check the status of the container by running the `docker ps` command and detailed logs can be accessed using `docker logs vllm-openai`.
 
 ### 2. Test inference
 
-Note the IP address of your host with the vLLM OpenAI server and connect to the inference server using the openai-python library, either on the same host or remotely. We pass the IP address and port as the base_url for the openAI Python client to use.
+Note the IP address of your host with the vLLM OpenAI server and connect to the inference server using the OpenAI-Python library, either on the same host or remotely. We pass the IP address and port as the base_url for the OpenAI Python client to use.
 
 <pre>
 from openai import OpenAI
