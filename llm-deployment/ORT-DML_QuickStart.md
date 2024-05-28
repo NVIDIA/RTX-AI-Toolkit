@@ -16,12 +16,12 @@ pip install [--pre] numpy onnxruntime-genai-directml
 python3 -m onnxruntime_genai.models.builder -m model_name -o path_to_output_folder -p precision -e execution_provider 
 ```
 
-For example, to build fp16 Phi-2 model
+For example, to build fp16 Phi-2 model:
 ```bash
 python -m onnxruntime_genai.models.builder -m microsoft/phi-2 -e dml -p fp16 -o ./models/phi2
 ```
 
-To build int4 Phi-2 model
+To build int4 Phi-2 model:
 ```bash
 python -m onnxruntime_genai.models.builder -m microsoft/phi-2 -e dml -p int4 -o ./models/phi2
 ```

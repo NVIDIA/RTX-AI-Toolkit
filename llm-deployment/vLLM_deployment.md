@@ -6,7 +6,7 @@
 
 vLLM supports several models, including Llama, Mistral, Phi-3, and Gemma. See full list [here](https://docs.vllm.ai/en/latest/models/supported_models.html).
 
-In this guide, we will demonstrate how to deploy a vLLM OpenAI-compatible API microservice using the merged checkpoint generated from the Workbench-llamafactory project. To achieve this, we will use the `vllm-openai` Docker container for rapid deployment with customized Hugging Face (HF) checkpoints.
+In this guide, we will demonstrate how to deploy a vLLM OpenAI-compatible API microservice using the merged checkpoint generated from the Workbench-LLaMa-Factory project. To achieve this, we will use the `vllm-openai` Docker container for rapid deployment with customized Hugging Face (HF) checkpoints.
 
 ### 0. Pre-requisites
 
@@ -29,7 +29,6 @@ Then, run the following Docker command:
 <pre>
     docker run --rm --gpus all -v <local-merged-ckpt-dir>:/model -p 8000:8000 --env "TRANSFORMERS_OFFLINE=1" --env "HF_DATASET_OFFLINE=1" --name vllm-openai --ipc=host vllm/vllm-openai:latest --model="/model"
 </pre>
-
 
 For example, in our case:
 <pre>

@@ -1,7 +1,4 @@
 # NVIDIA RTX AI Toolkit
-
-
-
 The NVIDIA RTX™ AI Toolkit is a suite of tools and SDKs for Windows application developers to accelerate model customization, optimization, and deployment of AI models into applications running on Windows PC for RTX — across both cloud and PC.
 
 <img src="media/rtx-ai.png" width="800">
@@ -18,14 +15,15 @@ NVIDIA RTX AI Toolkit includes 2 primary phases: Model Customization and Model D
 Currently, we support an end-to-end workflow for customizing LLMs using PEFT (Parameter Efficient Fine-Tuning) techniques such as LoRA and(Low-Rank Adaptation of Large Language Models) and QLoRA on your RTX PC and deploying using NVIDIA TensorRT-LLM, ONNX-Runtime, llama.cpp, or as NIM endpoints in the cloud.
 
 ### 1. Model Customization  - [TUTORIAL](tutorial-llama3-finetune.md): 
-The model customization tutorial walks you through launching AI Workbench, using the Llama Factory GUI to do QLoRa fine-tuning, and exporting the quantized model. Optionally we provide Jupyter notebooks for quantizing finetuned models for deployment with TensorRT-LLM.
+The model customization tutorial walks you through launching AI Workbench, using the LlamaFactory GUI to do QLoRa fine-tuning, and exporting the quantized model. Optionally, we provide Jupyter notebooks for quantizing finetuned models for deployment with TensorRT-LLM.
 
 ### 2. Model Deployment - [START HERE](llm-deployment/README.md)
-There are two paths to deploy AI models: On device, or in cloud. Models deployed to device can achieve lower latency and don't require calls to the cloud at runtime, but have certain hardware requirements. Models deployed to the cloud can support an application running on any hardware, but have an ongoing operating cost. Different applications will do either, or both. The RTX AI Toolkit provides tools for both paths, and we provide instructions in the tutorial for deploying on device and in the cloud.
+There are two paths to deploy AI models: On device, or in cloud. Models deployed to device can achieve lower latency and don't require calls to the cloud at runtime, but have certain hardware requirements. Models deployed to the cloud can support an application running on any hardware, but have an ongoing operating cost. Different applications will do either, or both. The RTX AI Toolkit provides tools for both paths, and we provide instructions in the tutorial for deploying across on device and cloud environments.
 
-AIM SDK offers developers a unified interface to orchestrate deployment of AI models across devices using multiple inference backends -  from cloud to local PC execution environments. This is currently available to certain early access customers, [apply now](NeedLink) to get access.
+NVIDIA AI Inference Manager (AIM) SDK offers developers a unified interface to orchestrate deployment of AI models across devices using multiple inference backends -  from cloud to local PC execution environments. This is currently available to certain early access customers, [apply now](NeedLink) to get access.
 
 **Quantized (on-device) inference:**
+For on-device inferencing the we below inferencing paths are supported:
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
 | TensorRT-LLM | |  [✅](llm-deployment/TensorRT-LLM_deployment.md) |
@@ -34,6 +32,7 @@ AIM SDK offers developers a unified interface to orchestrate deployment of AI mo
 
 
 **FP16 (cloud) inference:**
+For cloud deployments the following inferencing paths are supported:
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
 | vLLM |    [✅](llm-deployment/vLLM_deployment.md#3-serving-lora-adapters) |   [✅](llm-deployment/vLLM_deployment.md) |
