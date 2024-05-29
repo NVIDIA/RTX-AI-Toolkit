@@ -11,6 +11,8 @@ In this tutorial, you'll learn how to use the LLaMA-Factory NVIDIA AI Workbench 
 
 4. 100+ GB free disk space to store the AI Workbench containers, and LLM checkpoints. 
 
+5. For smooth operation, ensure your system has at least 32 GB of RAM installed. 
+
 ## 1. Setup LLaMa-Factory Workbench Project
 
 1. Start AI Workbench on your Windows PC and select 'Clone Project'. Proceed to clone the LLaMa-Factory Workbench project using this GitHub URL: [https://github.com/kedarpotdar-nv/workbench-llamafactory](https://github.com/kedarpotdar-nv/workbench-llamafactory)
@@ -119,6 +121,8 @@ The application stores model checkpoints every 100 steps in the data/scratch/cod
 
 
 ## 3. Evaluating Model
+
+>[!IMP] Before proceeding, ensure that the quantization bit width is configured to 4 bits. To do this, navigate to the "Advanced Config" section and locate the "Quantization Bit" option. Set the value to 4..
 
 Once the fine-tuning process is complete, the final adapters will be available in the data/scratch/codealpaca directory. 
 <img src="media/final.png" width="600">
