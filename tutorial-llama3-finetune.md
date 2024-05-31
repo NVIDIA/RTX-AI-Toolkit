@@ -9,7 +9,9 @@ Welcome to the RTX AI Toolkit LLM Fine-tuning Tutorial. In this tutorial, you'll
 
 3. Generate a HuggingFace [User Access Token](https://huggingface.co/docs/hub/en/security-tokens). Ensure your HuggingFace account has access to the Meta LLaMA3-8B-Instruct model [here](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct). 
 
-4. 100+ GB free disk space to store the Workbench containers, LLM checkpoints, and 
+4. 100+ GB free disk space to store the Workbench containers, dependencies, and LLM checkpoints.
+
+5. 
 
 ## 1. Setup LLaMa-Factory Workbench Project
 
