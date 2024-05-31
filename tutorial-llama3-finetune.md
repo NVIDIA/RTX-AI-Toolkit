@@ -11,6 +11,8 @@ In this tutorial, you'll learn how to use the LLaMA-Factory NVIDIA AI Workbench 
 
 4. 100+ GB free disk space to store the AI Workbench containers, and LLM checkpoints. 
 
+5. For smooth operation, ensure your system has at least 32 GB of RAM installed. 
+
 ## 1. Setup LLaMa-Factory Workbench Project
 
 1. Start AI Workbench on your Windows PC and select 'Clone Project'. Proceed to clone the LLaMa-Factory Workbench project using this GitHub URL: [https://github.com/kedarpotdar-nv/workbench-llamafactory](https://github.com/kedarpotdar-nv/workbench-llamafactory)
@@ -44,6 +46,8 @@ The LLaMa-Factory GUI should now start in your web browser.
 2. **Model Training Configuration**
 
 In the Model Name dropdown, select 'LLaMA3-8B-Chat' as the model you wish to fine-tune. Ensure that the fine-tuning method is set to 'lora' and leave the adapter path empty for the time being.
+
+> **Note:** The `LLaMA3-8B-Chat` model is a gated model on the Hugging Face Hub. This means that you need to request and obtain access to the model before you can use it. To learn more about gated models and the process of accessing them, please refer to the "Appendix: Gated Models" section.
 
 Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial to perform QLoRA fine-tuning.
 
@@ -118,6 +122,8 @@ The application stores model checkpoints every 100 steps in the data/scratch/cod
 
 ## 3. Evaluating Model
 
+>[!IMP] Before proceeding, ensure that the quantization bit width is configured to 4 bits. To do this, navigate to the "Advanced Config" section and locate the "Quantization Bit" option. Set the value to 4..
+
 Once the fine-tuning process is complete, the final adapters will be available in the data/scratch/codealpaca directory. 
 <img src="media/final.png" width="600">
 
@@ -179,7 +185,8 @@ RTX AI Toolkit supports the following options for inference deployment of LLMs.
 | vLLM |    ✅ |   ✅ |
 | NIMs| ✅    |    |
 
-
+## Uninstallation
+To uninstall the NVIDIA AI Workbench, follow the steps outlined in the [Uninstallation Guide](https://docs.nvidia.com/ai-workbench/user-guide/latest/uninstall/windows.html#windows-uninstall-steps).
 
 
 ## Appendix - Importing custom datasets
@@ -219,7 +226,16 @@ To incorporate a custom training dataset into your LLama-Factory AI Workbench pr
 
 Proceed to fine-tune as usual.
 
+## Appendix - Gated Models
 
+On the Hugging Face Hub, certain model repositories are designated as "gated models," meaning that access to these models is restricted. To use one:
+
+1. Request Access: While logged in, visit the gated model's page and submit an access request with your details.
+2. Await Approval:
+    - If automatic, you'll get immediate access.
+    - If manual, the authors must review and approve your request.
+    
+Once approved, you can download and use the gated model files.
 
 ## Troubleshooting Guide
 
