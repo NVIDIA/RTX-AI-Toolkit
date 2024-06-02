@@ -88,7 +88,7 @@ Adjust the hyperparameters above, based on your setup. Keep all other configurat
 
 By default, LLaMA-Factory only trains the `q_proj`, and `v_proj` LoRA modules. To improve accuracy, we recommend fine-tuning LoRA modules. Expand the 'LoRA Configurations' tab, and specify the below as 'LoRA modules':
 
-`q_proj, k_proj, v_proj, gate_proj, up_proj, down_proj, lm_head`
+`q_proj, k_proj, v_proj, gate_proj, up_proj, down_proj, o_proj`
 
 >[!IMP] Ensure that the output directory is under `/project/data/scratch/`.
 
@@ -246,9 +246,14 @@ To access the application's logs in Workbench, click on the 'Output' button at t
 <img src="media/logs.png" width="700">
 
 
-### 2. Access Llamafactory Python Environment
+### 2. Access LlamaFactory Python Environment
 
-LLaMa-Factory is installed inside a 
+LLaMa-Factory is installed inside a conda env within the Workbench project container. To access the Python environment, use the Workbench CLI to access the project container.
+
+<img src="media/python-env.png" width="700">
+
+
+This should open the 
 
 ### 3. Workbench Project Build error
 Sometimes when upgrading Workbench version, 
