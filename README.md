@@ -7,7 +7,7 @@ The NVIDIA RTX™ AI Toolkit is a suite of tools and SDKs for Windows applicatio
 ## Latest News
 Follow the RTX AI Toolkit fine-tuning workflow with this tutorial - [LLaMaA3-8B QLoRA](tutorial-llama3-finetune.md)
 
-[NVIDIA RTX AI Toolkit Launch Blog](NeedLink)
+[NVIDIA RTX AI Toolkit Launch Blog](https://developer.nvidia.com/blog/streamline-ai-powered-app-development-with-nvidia-rtx-ai-toolkit-for-windows-rtx-pcs/)
 
 ## Getting Started
 NVIDIA RTX AI Toolkit includes 2 primary phases: Model Customization and Model Deployment. Each phase is tailored to guide you through the necessary steps to effectively customize and deploy your AI models.
