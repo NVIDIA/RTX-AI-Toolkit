@@ -49,7 +49,9 @@ In the Model Name dropdown, select 'LLaMA3-8B-Chat' as the model you wish to fin
 
 > **Note:** The `LLaMA3-8B-Chat` model is a gated model on the Hugging Face Hub. This means that you need to request and obtain access to the model before you can use it. To learn more about gated models and the process of accessing them, please refer to the "Appendix: Gated Models" section.
 
-Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial to perform QLoRA fine-tuning.
+Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial to perform QLoRA fine-tuning. 
+
+[!TIP] For improved training performance, enable [unsloth](https://github.com/unslothai/unsloth) in the Advanced Configuration settings. Currently, unsloth is supported only on the Docker Desktop backend for AI Workbench.
 
 Llama-Factory offers a variety of built-in datasets suitable for fine-tuning. For this tutorial, we will be using the [codealpaca dataset](https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k) provided by sahil2801.  
 

@@ -1,7 +1,9 @@
 
 ## TensorRT-LLM on Windows Deployment
 
+TensorRT-LLM is NVIDIA's
 
+To deploy a quantized model using TensorRT-LLM, first need to quantize the model using NVIDIA's TensorRT Model Optimizer 
 
 ### 0. Pre-requisites
 Install TensorRT-LLM for Windows by following the instructions [here](https://github.com/NVIDIA/TensorRT-LLM/tree/v0.10.0/windows). 
