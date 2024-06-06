@@ -17,7 +17,7 @@ In this tutorial, you'll learn how to use the LLaMA-Factory NVIDIA AI Workbench 
 
 ## 1. Setup LLaMa-Factory Workbench Project
 
-1. Start AI Workbench on your Windows PC and select 'Clone Project'. Proceed to clone the LLaMa-Factory Workbench project using this GitHub URL: [https://github.com/kedarpotdar-nv/workbench-llamafactory](https://github.com/kedarpotdar-nv/workbench-llamafactory)
+1. Start AI Workbench on your Windows PC and select 'Clone Project'. Proceed to clone the LLaMa-Factory Workbench project using this GitHub URL: [https://github.com/NVIDIA/workbench-llamafactory](https://github.com/NVIDIA/workbench-llamafactory/)
 
 <img src="media/2.png" width="600">
 
