@@ -53,7 +53,8 @@ In the Model Name dropdown, select 'LLaMA3-8B-Chat' as the model you wish to fin
 
 Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial to perform QLoRA fine-tuning. 
 
-[!TIP] For improved training performance, enable [unsloth](https://github.com/unslothai/unsloth) in the Advanced Configuration settings. Currently, unsloth is supported only on the Docker Desktop backend for AI Workbench.
+>[!TIP] 
+> For improved training performance, enable [unsloth](https://github.com/unslothai/unsloth) in the Advanced Configuration settings. Currently, unsloth is supported only on the Docker Desktop backend for AI Workbench.
 
 Llama-Factory offers a variety of built-in datasets suitable for fine-tuning. For this tutorial, we will be using the [codealpaca dataset](https://huggingface.co/datasets/sahil2801/CodeAlpaca-20k) provided by sahil2801.  
 
@@ -126,7 +127,8 @@ The application stores model checkpoints every 100 steps in the data/scratch/cod
 
 ## 3. Evaluating Model
 
->[!IMP] Before proceeding, ensure that the quantization bit width is configured to 4 bits. To do this, navigate to the "Advanced Config" section and locate the "Quantization Bit" option. Set the value to 4..
+>[!IMP] 
+> Before proceeding, ensure that the quantization bit width is configured to 4 bits. To do this, navigate to the "Advanced Config" section and locate the "Quantization Bit" option. Set the value to 4..
 
 Once the fine-tuning process is complete, the final adapters will be available in the data/scratch/codealpaca directory. 
 <img src="media/final.png" width="600">
@@ -173,7 +175,8 @@ Once exported, the merged checkpoint will be available in the `data/scratch/merg
 
 RTX AI Toolkit supports the following options for inference deployment of LLMs.
 
-[!NOTE] Click on the ✅ for instructions for that particular pathway.
+> [!NOTE] 
+> Click on the ✅ for instructions for that particular pathway.
 
 **Quantized (on-device) inference:**
 | Platform | LoRA Adapter | Merged checkpoint |
