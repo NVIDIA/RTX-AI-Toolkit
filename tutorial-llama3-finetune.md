@@ -49,7 +49,8 @@ The LLaMa-Factory GUI should now start in your web browser.
 
 In the Model Name dropdown, select 'LLaMA3-8B-Chat' as the model you wish to fine-tune. Ensure that the fine-tuning method is set to 'lora' and leave the adapter path empty for the time being.
 
-> **Note:** The `LLaMA3-8B-Chat` model is a gated model on the Hugging Face Hub. This means that you need to request and obtain access to the model before you can use it. To learn more about gated models and the process of accessing them, please refer to the "Appendix: Gated Models" section.
+> [!NOTE] 
+> The `LLaMA3-8B-Chat` model is a gated model on the Hugging Face Hub. This means that you need to request and obtain access to the model before you can use it. To learn more about gated models and the process of accessing them, please refer to the "Appendix: Gated Models" section.
 
 Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial to perform QLoRA fine-tuning. 
 
