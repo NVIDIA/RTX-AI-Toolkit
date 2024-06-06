@@ -19,4 +19,4 @@ RTX AI Toolkit supports the following deployment workflows for the fine-tuned LL
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
 | vLLM |    [✅](vLLM_deployment.md#3-serving-lora-adapters) |   [✅](vLLM_deployment.md) |
-| NIMs| ✅    |    |
+| NIMs| [✅](NIMs_deployment.md)    |    |

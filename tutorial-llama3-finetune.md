@@ -5,7 +5,7 @@ In this tutorial, you'll learn how to use the LLaMA-Factory NVIDIA AI Workbench 
 
 ## 0. Prerequisites 
 1. Ensure you have a Windows PC equipped with an RTX GPU, ideally with at least 16GB of VRAM (GeForce RTX 4070Ti or higher). 
-2. Download and install [NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development. This project is built for the latest (May 2024) release - v0.50.16.
+2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development. This project is built for the releases v0.50.16 onwards.
 
 3. Generate a HuggingFace [User Access Token](https://huggingface.co/docs/hub/en/security-tokens). Ensure your HuggingFace account has access to the Meta Llama3-8B-Instruct model [here](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct). 
 
@@ -250,19 +250,35 @@ To access the application's logs in Workbench, click on the 'Output' button at t
 
 ### 2. Access LlamaFactory Python Environment
 
-LLaMa-Factory is installed inside a conda env within the Workbench project container. To access the Python environment, use the Workbench CLI to access the project container.
+LLaMa-Factory is installed in a Python virtual environment within the Workbench project's Docker/Podman container. To access this environment, first open the NVIDIA-Workbench WSL distro using the command prompt and connect to the running Docker/Podman container.
 
-<img src="media/python-env.png" width="700">
+**Using Docker Desktop GUI:**
 
+Navigate to the running container and connect to the running container using the 'Open in Terminal' option as shown below:
 
-This should open the 
+<img src="media/docker-desktop.png" width="600">
 
-### 3. Workbench Project Build error
-Sometimes when upgrading Workbench version, 
+Once inside the container, access the Python env using:
 
+```
+python3 -m venv llama-factory-env
+```
 
-### 4. Upgrading Workbench 
+**Using Terminal**
 
-To upgrade Workbench
+```
+wsl -d NVIDIA-Workbench
+cd ~
+docker ps 
+```
+Note the name of the Llama-factory container, it usually is `project-llamafactory-wb`.
 
-<TODO>
+Enter the Docker container using:
+```
+docker exec -it project-llamafactory-wb /bin/bash
+```
+
+Once inside the container, access the Python env using:
+```
+python3 -m venv llama-factory-env
+```
