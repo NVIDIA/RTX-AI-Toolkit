@@ -96,7 +96,8 @@ By default, LLaMA-Factory only trains the `q_proj`, and `v_proj` LoRA modules. T
 
 `q_proj, k_proj, v_proj, gate_proj, up_proj, down_proj, o_proj`
 
->[!IMP] Ensure that the output directory is under `/project/data/scratch/`.
+>[!IMPORTANT]
+> Ensure that the output directory is under `/project/data/scratch/`.
 
 | Parameter | Value |
 | -------------- | ----- |
@@ -128,7 +129,7 @@ The application stores model checkpoints every 100 steps in the data/scratch/cod
 
 ## 3. Evaluating Model
 
->[!IMP] 
+>[!IMPORTANT] 
 > Before proceeding, ensure that the quantization bit width is configured to 4 bits. To do this, navigate to the "Advanced Config" section and locate the "Quantization Bit" option. Set the value to 4..
 
 Once the fine-tuning process is complete, the final adapters will be available in the data/scratch/codealpaca directory. 
