@@ -6,8 +6,8 @@ In this tutorial, you'll learn how to use the LLaMA-Factory NVIDIA AI Workbench 
 ## 0. Prerequisites 
 1. Ensure you have a Windows PC equipped with an RTX GPU, ideally with at least 16GB of VRAM (GeForce RTX 4070Ti or higher). 
 
-2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development. This project is built for the releases v0.50.16 onwards.
-- If using the Docker Desktop backend while setting up AI Workbench, please ensure that you are on Docker Desktop version 4.31+.
+2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development. Please refer to the [user guide](https://docs.nvidia.com/ai-workbench/user-guide/latest/installation/windows.html) for installation instructions. This project is built for the releases v0.50.16 onwards.
+   - If using the Docker Desktop backend while setting up AI Workbench, please ensure that you are on Docker Desktop version 4.31.0+.
 
 3. Generate a HuggingFace [User Access Token](https://huggingface.co/docs/hub/en/security-tokens). Ensure your HuggingFace account has access to the Meta Llama3-8B-Instruct model [here](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct). 
 
@@ -288,3 +288,11 @@ Once inside the container, access the Python env using:
 ```
 python3 -m venv llama-factory-env
 ```
+
+
+
+### 3. Application Error
+
+<img src="media/application_error.png" width="600">
+
+If you encounter an Application Error similar to the one above, ensure that your system has WSL2 and virtualization enabled.
