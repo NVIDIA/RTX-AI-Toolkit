@@ -5,7 +5,8 @@
 ## [Installation](https://onnxruntime.ai/docs/genai/howto/install.html)
 
 ```bash
-pip install [--pre] numpy onnxruntime-genai-directml
+pip install numpy transformers torch onnx onnxruntime onnxruntime-directml
+pip install onnxruntime-genai --pre
 ```
 
 ## [Build optimized ONNX model](https://onnxruntime.ai/docs/genai/howto/build-model.html)
