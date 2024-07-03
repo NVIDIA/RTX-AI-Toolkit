@@ -4,7 +4,7 @@
 In this tutorial, you'll learn how to use the LLaMA-Factory NVIDIA AI Workbench project to fine-tune the Llama3-8B model on a RTX Windows PC. First, we showcase the QLoRA technique for model customization and explain how to export the LoRA adapter or the fine-tuned Llama-3 checkpoint.
 
 ## 0. Prerequisites 
-1. Ensure you have a Windows PC equipped with an RTX GPU, ideally with at least 16GB of VRAM (GeForce RTX 4070Ti or higher). 
+1. Ensure you have a Windows PC equipped with an RTX GPU, ideally with at least 16GB of VRAM (GeForce RTX 4070Ti, A5000 or higher). 
 
 2. Download and install **[NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/)** for local AI development. Please refer to the [user guide](https://docs.nvidia.com/ai-workbench/user-guide/latest/installation/windows.html) for installation instructions. This project is built for the releases v0.50.16 onwards.
    - If using the Docker Desktop backend while setting up AI Workbench, please ensure that you are on Docker Desktop version 4.31.0+.
@@ -52,7 +52,7 @@ In the Model Name dropdown, select 'LLaMA3-8B-Chat' as the model you wish to fin
 > [!NOTE] 
 > The `LLaMA3-8B-Chat` model is a gated model on the Hugging Face Hub. This means that you need to request and obtain access to the model before you can use it. To learn more about gated models and the process of accessing them, please refer to the "Appendix: Gated Models" section.
 
-Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial to perform QLoRA fine-tuning. 
+Next, expand the 'Advanced Configuration' section and set the 'Quantization bit' dropdown to '4'. This setting is crucial to perform QLoRA fine-tuning. Also select 'llama3' from the 'Prompt template' dropdown. 
 
 >[!TIP] 
 > For improved training performance, enable [unsloth](https://github.com/unslothai/unsloth) in the Advanced Configuration settings. Currently, unsloth is supported only on the Docker Desktop backend for AI Workbench.
@@ -95,6 +95,11 @@ Adjust the hyperparameters above, based on your setup. Keep all other configurat
 By default, LLaMA-Factory only trains the `q_proj`, and `v_proj` LoRA modules. To improve accuracy, we recommend fine-tuning LoRA modules. Expand the 'LoRA Configurations' tab, and specify the below as 'LoRA modules':
 
 `q_proj, k_proj, v_proj, gate_proj, up_proj, down_proj, o_proj`
+
+
+<img src="media/loramodules.png" width="600">
+
+
 
 >[!IMPORTANT]
 > Ensure that the output directory is under `/project/data/scratch/`.
