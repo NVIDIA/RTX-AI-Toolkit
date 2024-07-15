@@ -7,7 +7,13 @@ This guide demonstrates how to use LoRA adapters at runtime for inference with i
 
 This chart below showcases the workflow for deploying TensorRT-LLM
 
-<img src="../media/lora" width="700">
+<img src="../media/lora.png" width="700">
+
+This guide assumes that you have followed steps in the [Llama-Factory tutorial](../tutorial-llama3-finetune.md) to generate a fine-tuned LoRA checkpoint.
 
 ## 1. Base model quantization
-First, 
+First, use the quantization.ipynb script inside the Llama-Factory Workbench project
+
+## 2. TensorRT Engine Geenration with LoRA support
+
+## 3
