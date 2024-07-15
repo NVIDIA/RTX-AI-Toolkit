@@ -12,8 +12,8 @@ This chart below showcases the workflow for deploying TensorRT-LLM
 This guide assumes that you have followed steps in the [Llama-Factory tutorial](../tutorial-llama3-finetune.md) to generate a fine-tuned LoRA checkpoint.
 
 ## 1. Base model quantization
-First, use the quantization.ipynb script inside the Llama-Factory Workbench project
+First, use the quantization.ipynb script inside the Llama-Factory Workbench project. To export just the base model int4_awq checkpoint, start the Jupyter Notebook app and modify the
 
-## 2. TensorRT Engine Geenration with LoRA support
+## 2. TensorRT Engine Generation with LoRA support
 
 ## 3
