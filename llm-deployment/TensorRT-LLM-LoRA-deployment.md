@@ -36,27 +36,22 @@ You now have an `int4_awq` quantized llama3 checkpoint ready for use. This check
 
 To build a LoRA-compatible TensorRT engine with the int4_awq checkpoint, use the following trtllm-build command:
 
-<pre>
-  trtllm-build --checkpoint_dir llama3-int4 --output_dir llama3-engine-lora --gemm_plugin auto --lora_plugin auto --max_batch_size 8 --max_input_len 512 --max_output_len 50 --lora_dir  "codealpaca" --max_lora_rank 8 --lora_target_modules attn_q attn_k attn_v
-</pre>
+```
+  trtllm-build --checkpoint_dir "C:\models\llama3-int4" --output_dir "C:\models\llama3-engine-lora" --gemm_plugin float16 --lora_plugin float16 --max_batch_size 8 --max_input_len 512 --max_output_len 50 --lora_dir  "C:\models\codealpaca" --max_lora_rank 8 --lora_target_modules attn_q attn_k attn_v
+```
 
 ## 3. Run inference with LoRA 
 
-Use the TensorRT-LLM repo's run.py script to run inference as follows:
+To run inference, here we use the run.py script found in ```examples``` directory within the [TensorRT-LLM repo](https://github.com/NVIDIA/TensorRT-LLM).
 
 <pre>
-python ../run.py --engine_dir "llama3-engine-lora" \
-              --max_output_len 10 \
-              --tokenizer_dir "llama3-hf" \
-              --input_text "Write a program to print the Fibonacci sequence" \
-              --max_attention_window_size=4096 \
-              --lora_task_uids 0 \
-              --use_py_session \
-              --temperature 0.8 \
-              --top_p 0.8 \
-              --top_k 100
+python ..\run.py --engine_dir "C:\models\llama3-engine" --max_output_len 10 --tokenizer_dir "C:\models\llama3-hf" --input_text "how are you?" --lora_task_uids 0 --use_py_session --top_p 0.5 --top_k 0
 </pre>
 
-## 4. Multi-LORA inference
+## Multi-LORA inference
+TensorRT-LLM supports multi-LoRA inference, i.e. support for several LoRA adapters at runtime. During engine build time, pass all your LoRA directories using the ```--lora_dir ``` argument.
 
-to do
+Read more about multi-LoRA support [here](https://github.com/NVIDIA/TensorRT-LLM/tree/main/examples/llama#run-llama-with-several-lora-checkpoints).
+
+> [!NOTE]
+> When running inference with multiple LoRA adapters at the same time, only the ```q_proj```, ```k_proj```, and ```v_proj``` target modules are supported.
