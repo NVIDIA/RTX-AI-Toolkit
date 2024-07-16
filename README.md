@@ -26,7 +26,7 @@ NVIDIA AI Inference Manager (AIM) SDK offers developers a unified interface to o
 For on-device inferencing the we below inferencing paths are supported:
 | Platform | LoRA Adapter | Merged checkpoint |
 | -------- | :------------------: | :-----------------------: |
-| TensorRT-LLM | |  [✅](llm-deployment/TensorRT-LLM_deployment.md) |
+| TensorRT-LLM |[✅](TensorRT-LLM-LoRA-deployment) |  [✅](llm-deployment/TensorRT-LLM_deployment.md) |
 | llama.cpp |   |   [✅](llm-deployment/llama.cpp_deployment.md) |
 | ONNX Runtime - DML |     |   [✅](llm-deployment/ORT-DML_QuickStart.md) |
 
