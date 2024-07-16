@@ -37,16 +37,7 @@ You now have an `int4_awq` quantized llama3 checkpoint ready for use. This check
 To build a LoRA-compatible TensorRT engine with the int4_awq checkpoint, use the following trtllm-build command:
 
 <pre>
-  trtllm-build --checkpoint_dir ./tllm_checkpoint_1gpu_awq \
-            --output_dir llama3-engine-lora \
-            --gemm_plugin auto \
-            --lora_plugin auto \
-            --max_batch_size 8 \
-            --max_input_len 512 \
-            --max_output_len 50 \
-            --lora_dir  "codealpaca" \
-            --max_lora_rank 8 \
-            --lora_target_modules attn_q attn_k attn_v
+  trtllm-build --checkpoint_dir llama3-int4 --output_dir llama3-engine-lora --gemm_plugin auto --lora_plugin auto --max_batch_size 8 --max_input_len 512 --max_output_len 50 --lora_dir  "codealpaca" --max_lora_rank 8 --lora_target_modules attn_q attn_k attn_v
 </pre>
 
 ## 3. Run inference with LoRA 
