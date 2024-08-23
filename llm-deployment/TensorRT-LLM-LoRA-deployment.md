@@ -1,6 +1,6 @@
 # TensorRT-LLM Deployment with int4 base checkpoint + FP16 LoRA adapter
 
-This guide explains how to use LoRA adapters for runtime inference using int4_awq base HuggingFace checkpoints in TensorRT-LLM. Additionally, this workflow supports multiple adapters at runtime with a single base checkpoint.
+This guide outlines the process for using LoRA adapters for inference alongside int4_awq base checkpoints in TensorRT-LLM v0.11. This workflow allows for the deployment of multiple adapters at runtime using a single base checkpoint, enabling flexible and efficient model adaptation. Learn more about TensorRT-LLM's LoRA support [here](https://github.com/NVIDIA/TensorRT-LLM/tree/v0.11.0/examples/llama#run-models-with-lora).
 
 > [!NOTE]
 > To perform inference with merged HF checkpoint, follow [TRT-LLM Deployment](TensorRT-LLM_deployment.md).
@@ -37,7 +37,7 @@ You now have an `int4_awq` quantized llama3 checkpoint ready for use. This check
 To build a LoRA-compatible TensorRT engine with the int4_awq checkpoint, use the following trtllm-build command:
 
 ```
-  trtllm-build --checkpoint_dir "C:\models\llama3-int4" --output_dir "C:\models\llama3-engine-lora" --gemm_plugin float16 --lora_plugin float16 --max_batch_size 8 --max_input_len 512 --max_output_len 50 --lora_dir  "C:\models\codealpaca" --max_lora_rank 8 --lora_target_modules attn_q attn_k attn_v
+trtllm-build --checkpoint_dir "C:\models\llama3-int4" --output_dir "C:\models\llama3-engine-lora" --gemm_plugin auto --lora_plugin auto --max_batch_size 8 --max_input_len 512 --max_output_len 50 --lora_dir "C:\models\codealpaca" 
 ```
 
 ## 3. Run inference with LoRA 
