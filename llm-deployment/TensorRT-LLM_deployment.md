@@ -1,5 +1,5 @@
 
-# TensorRT-LLM on Windows Deployment
+# TensorRT-LLM on Windows Deployment - with merged HF checkpoint
 
 [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) is NVIDIA's library for high-performance LLM inference across on-device and data center platforms.
 
@@ -7,6 +7,8 @@ To deploy a quantized model using TensorRT-LLM, you first need to quantize the m
 
 <img src="../media/trt-llm-deploy.png" width="700">
 
+> [!NOTE]
+> Follow this guide to deploy a merged HF checkpoint using TensorRT-LLM. To deploy models with (multiple) LoRA adapters at runtime, follow the instructions [here](TensorRT-LLM-LoRA-deployment.md).
 
 ## Model Quantization using TensorRT Model Optimizer - INT4_AWQ
 
@@ -34,7 +36,7 @@ Note this directory path, for ex: `C:\Users\NVIDIA\Downloads\merged-hf`. These f
 <img src="../media/hf-files.png" width="500">
 
 
-## TensorRT-LLM Windows Deployment
+## TensorRT-LLM Windows Deployment 
 
 ### 0. Pre-requisites
 
