@@ -1,0 +1,42 @@
+/.idea
+/.vscode
+node_modules
+.DS_Store
+
+/dist
+/dist-electron
+/release
+/models
+
+# Ignore node_modules folder, which contains installed packages
+node_modules/
+
+logs
+*.log
+npm-debug.log*
+
+.env
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+
+dist/
+build/
+
+# Ignore coverage reports and test artifacts
+coverage/
+*.lcov
+
+# Ignore cache directories
+.cache/
+.nyc_output/
+.tmp/
+
+package-lock.json
+
+*.tsbuildinfo
+
+optionalDependencies/*
+

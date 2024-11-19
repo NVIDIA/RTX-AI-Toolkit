@@ -5,6 +5,10 @@
 
 This directory contains a variety of scripts and other resources to help developers deploy AI workflows on NVIDIA hardware running Windows. The technologies covered in these resources include ONNXRuntime-GenAI and TensorRT-LLM, and will expand to cover other projects in the future.
 
+### node-llama-cpp-app
+
+This subfolder contains source code for an example electron app built using TypeScript and [`node-llama-cpp`](https://github.com/withcatai/node-llama-cpp). It is showcases how to run inference on a large language model (LLM) running locally on your RTX PC through `node-llama-cpp's` prebuilt CUDA support for your NVIDIA GPUs. It also demonstrates how to integrate tool/function calling support in your LLM app.
+
 ### onnxruntime-genai
 
 This subfolder contains resources for using the [ONNXRuntime-GenAI project](https://github.com/microsoft/onnxruntime-genai), a framework for deploying generative models using ONNXRuntime.
