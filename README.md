@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> As of 11/21/2025 this project has been deprecated. RTX-AI_Toolkit is not maintained anymore. 
+
 # NVIDIA RTX AI Toolkit
 The NVIDIA RTX™ AI Toolkit is a suite of tools and SDKs for Windows application developers to accelerate model customization, optimization, and deployment of AI models into applications running on Windows PC for RTX — across both cloud and PC.
 
